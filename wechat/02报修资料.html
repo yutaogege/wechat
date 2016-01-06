@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>报修资料</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/wechat.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="topBar">
+            <a class="back" href="javascript:;">返回</a>
+            <p class="topBar-title">报修资料</p>
+        </div>
+        <div class="contain">
+            <div class="wrap">
+                <div class="fill-info">
+                    <ul>
+                        <li>
+                            <span>公司名称</span>
+                            <div class="opacity">
+                                <input></input>
+                            </div>
+                        </li>
+                        <li>
+                            <span>联系人</span>
+                            <div class="opacity">
+                                <input></input>
+                            </div>
+                        </li>
+                        <li>
+                            <span>联系人</span>
+                            <div class="opacity">
+                                <input></input>
+                            </div>
+                        </li>
+                        <li>
+                            <span>省份</span>
+                            <div class="opacity">
+                                <select>
+                                    <option value="1">aaa</option>
+                                    <option value="2">bbb</option>
+                                    <option value="3">ccc</option>
+                                </select>
+                                <span class="arrow-down"></span>
+                            </div>
+                            <li>
+                                <span>市</span>
+                                <div class="opacity">
+                                    <select>
+                                        <option value="1">aaa</option>
+                                        <option value="2">bbb</option>
+                                        <option value="3">ccc</option>
+                                    </select>
+                                    <span class="arrow-down"></span>
+                                </div>
+                                <li>
+                                    <span>县/区</span>
+                                    <div class="opacity">
+                                        <select>
+                                            <option value="1">aaa</option>
+                                            <option value="2">bbb</option>
+                                            <option value="3">ccc</option>
+                                        </select>
+                                        <span class="arrow-down"></span>
+                                    </div>
+                                    <li>
+                                        <span>详细地址</span>
+                                        <div class="opacity">
+                                            <input></input>
+                                        </div>
+                                    </li>
+                    </ul>
+                </div>
+                <div class="else">
+                    <span class="e-mid">或</span>
+                </div>
+                <div class="title">地址选择</div>
+                <div class="use-addrs">
+                    <p>
+                        <input type="radio" name="addrs" checked>上海市-浦东新区-曹路镇</p>
+                    <p>
+                        <input type="radio" name="addrs">上海市-浦东新区-曹路镇</p>
+                    <p>
+                        <input type="radio" name="addrs">上海市-浦东新区-曹路镇</p>
+                </div>
+            </div>
+            <div class="wrap-hide">
+                <div class="fill-info">
+                    <ul>
+                        <li>
+                            <span>公司名称</span>
+                            <div class="opacity">
+                                <input></input>
+                            </div>
+                        </li>
+                        <li>
+                            <span>联系人</span>
+                            <div class="opacity">
+                                <input></input>
+                            </div>
+                        </li>
+                        <li>
+                            <span>联系人</span>
+                            <div class="opacity">
+                                <input></input>
+                            </div>
+                        </li>
+                        <li>
+                            <span>省份</span>
+                            <div class="opacity">
+                                <select>
+                                    <option value="1">aaa</option>
+                                    <option value="2">bbb</option>
+                                    <option value="3">ccc</option>
+                                </select>
+                                <span class="arrow-down"></span>
+                            </div>
+                            <li>
+                                <span>市</span>
+                                <div class="opacity">
+                                    <select>
+                                        <option value="1">aaa</option>
+                                        <option value="2">bbb</option>
+                                        <option value="3">ccc</option>
+                                    </select>
+                                    <span class="arrow-down"></span>
+                                </div>
+                                <li>
+                                    <span>县/区</span>
+                                    <div class="opacity">
+                                        <select>
+                                            <option value="1">aaa</option>
+                                            <option value="2">bbb</option>
+                                            <option value="3">ccc</option>
+                                        </select>
+                                        <span class="arrow-down"></span>
+                                    </div>
+                                    <li>
+                                        <span>详细地址</span>
+                                        <div class="opacity">
+                                            <input></input>
+                                        </div>
+                                    </li>
+                    </ul>
+                </div>
+                 <div class="else">
+                    <span class="e-mid">或</span>
+                </div>
+                <div class="title">地址选择</div>
+                <div class="use-addrs">
+                    <p>
+                        <input type="radio" name="addrs2" checked>上海市-浦东新区-曹路镇</p>
+                    <p>
+                        <input type="radio" name="addrs2">上海市-浦东新区-曹路镇</p>
+                    <p>
+                        <input type="radio" name="addrs2">上海市-浦东新区-曹路镇</p>
+                </div>
+            </div>
+            <div class="manage-addr">
+                <p>+添加备用地址</p>
+            </div>
+            <div class="do-submit"><a href="#" class="btn">提交资料</a></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript">
+    $(".manage-addr p").on('click', function(e) {
+        e.preventDefault();
+        if ($(this).text() == '+添加备用地址') {
+            $(".wrap-hide").show();
+            $(this).text('-取消备用地址');
+        } else {
+            $(".wrap-hide").hide();
+            $(this).text('+添加备用地址');
+        }
+    });
+    </script>
+</body>
+
+</html>

@@ -385,6 +385,7 @@ body {
   border-bottom: 1px solid #efeff4;
   background: #fff;
   padding: 0.41667rem 1.08333rem;
+  overflow: hidden;
 }
 
 .combo {
@@ -457,7 +458,6 @@ body {
 
 .bill-table .label {
   line-height: 2.91667rem;
-  overflow: hidden;
   padding: 0 1.08333rem;
 }
 
@@ -488,7 +488,7 @@ body {
   border-radius: 0.20833rem;
 }
 
-.bill-prob .descript {
+.descript.inline {
   width: 16.66667rem;
   color: #a5a5a5;
   margin-top: 0.75rem;
@@ -531,6 +531,24 @@ body {
 }
 .show-list .label {
   line-height: 2.70833rem;
+}
+
+.logo {
+  width: 6.25rem;
+  height: 7.08333rem;
+  margin: 1.08333rem auto;
+  background: url('../images/logo.jpg?1452252419');
+  background-size: contain;
+}
+
+.label.introdu {
+  border: none;
+}
+.label.introdu .point {
+  margin-left: 6.66667rem;
+  display: block;
+  position: relative;
+  top: -2.08333rem;
 }
 
 /*# sourceMappingURL=wechat.css.map */

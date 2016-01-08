@@ -288,6 +288,7 @@ body {
     border-bottom: 1px solid #efeff4;
     background: #fff;
     padding: rem-calc(10 26);
+    overflow: hidden;
 }
 
 .combo{
@@ -359,7 +360,6 @@ body {
 .bill-table{
     .label{
         line-height: rem-calc(70);
-        overflow: hidden;
         padding:rem-calc(0 26);
     }
 }
@@ -389,14 +389,13 @@ body {
         border-radius: rem-calc(5);
     }
 }
-.bill-prob{
-    .descript{
-        width: rem-calc(400);
-        color: #a5a5a5;
-        margin-top: rem-calc(18);
-        height: rem-calc(90);
-    }
+.descript.inline{
+    width: rem-calc(400);
+    color: #a5a5a5;
+    margin-top: rem-calc(18);
+    height: rem-calc(90);
 }
+
 .star-line{
     span{
         width: rem-calc(200);
@@ -435,5 +434,22 @@ body {
     }
     .label{
         line-height: rem-calc(65);
+    }
+}
+.logo{
+    width: rem-calc(150);
+    height: rem-calc(170);
+    margin: rem-calc(26) auto;
+        background:image-url('logo.jpg');
+        background-size: contain;
+}
+
+.label.introdu{
+    border: none;
+    .point{
+        margin-left: rem-calc(160);
+        display: block;
+        position: relative;
+        top:rem-calc(-50);
     }
 }

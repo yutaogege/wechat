@@ -455,4 +455,65 @@ body {
   right: 0.08333rem;
 }
 
+.bill-table .label {
+  line-height: 2.91667rem;
+  overflow: hidden;
+  padding: 0 1.08333rem;
+}
+
+.list-show {
+  float: right;
+  color: #a5a5a5;
+  font-size: 1rem;
+}
+.list-show img {
+  width: 2.625rem;
+  height: 2.625rem;
+  vertical-align: top;
+  margin-top: 0.125rem;
+}
+.list-show input[type=text] {
+  color: #818181;
+  text-align: right;
+  width: 12.5rem;
+}
+.list-show input[type=data] {
+  width: 2.66667rem;
+  height: 1.375rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.625rem;
+  background: #4285f4;
+  cursor: pointer;
+  border-radius: 0.20833rem;
+}
+
+.bill-prob .descript {
+  width: 16.66667rem;
+  color: #a5a5a5;
+  margin-top: 0.75rem;
+  height: 3.75rem;
+}
+
+.star-line span {
+  width: 8.33333rem;
+  height: 1.41667rem;
+  margin: 0.41667rem 0 0.83333rem;
+  display: block;
+  background: url('../images/back-star.jpg?1452244165') repeat;
+  float: right;
+  background-size: contain;
+}
+.star-line i {
+  display: block;
+  height: 1.41667rem;
+  background: url('../images/choose-star.jpg?1452244165') repeat;
+  background-size: contain;
+}
+.star-line .descript {
+  color: #a5a5a5;
+  height: 5rem;
+  padding: 0 1.66667rem;
+}
+
 /*# sourceMappingURL=wechat.css.map */

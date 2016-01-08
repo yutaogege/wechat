@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>报修单</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/wechat.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="topBar">
+            <a class="back" href="javascript:;">返回</a>
+            <h2 class="topBar-title">报修单</h2>
+        </header>
+        <div class="contain">
+            <form>
+        	<ul class="module bill-table">
+                <li class="label bill-list">
+                    <span class="li-name">订单号</span>
+                    <span class="list-show">0011</span>
+                </li>
+                <li class="label bill-worker">
+                    <span class="li-name">接单工程师</span>
+                    <div class="list-show">
+                        <span>张工</span>
+                        <img src="images/member.jpg">
+                    </div>
+                </li>
+                <li class="label bill-name">
+                    <span class="li-name">姓名</span>
+                    <span class="list-show">毅大师</span>
+                </li>
+                <li class="label bill-count">
+                    <span class="li-name">联系方式</span>
+                    <div class="list-show">
+                        <input type="text" id="bill-count"
+                        name="bill-count" value="15816817818" />
+                    </div>
+                </li>
+                <li class="label bill-prob">
+                    <span class="li-name">问题描述</span>
+                    <div class="list-show">
+                        <textarea class="descript">是否是肯定会发生了肯定还是靠技术水电是他仍然通都是可理解理解理解理解所得税法士大夫法功高电脑开不了机了求助！电脑开不了机了水电是的冯绍峰水电费水电费多少财富都是他和他人很多
+                        </textarea>
+                    </div>
+                </li>
+                <li class="label bill-adr">
+                    <span class="li-name">维修地点</span>
+                    <div class="list-show">
+                        <input type="text" id="bill-adr"
+                        name="bill-adr" value="上海市-浦东区-金桥" />
+                    </div>
+                </li>
+                <li class="label bill-startime">
+                    <span class="li-name">入场时间</span>
+                    <div class="list-show">
+                        <span>2015-12-22 12:00</span>
+                        <input type="data" id="bill-startime" name="bill-startime" 
+                        value="入场" readonly="true" />
+                    </div>
+                </li>
+                <li class="label bill-overtime">
+                    <span class="li-name">离场时间</span>
+                    <div class="list-show">
+                        <span>2015-12-22 19:00</span>
+                        <input type="data" id="bill-startime" name="bill-startime" 
+                        value="离场" readonly="true" />
+                    </div>
+                </li>
+                <li class="label bill-count">
+                    <span class="li-name">次数</span>
+                    <span class="list-show">10次</span>
+                </li>
+                <li class="label bill-discrpt">
+                    <span class="li-name">订单状态</span>
+                    <span class="list-show">未评论</span>
+                    <div class="star-line">
+                        <span><i style="width: 60%"></i></span>
+                    </div>
+                </li>
+                <li class="label bill-usersay">
+                    <span class="li-name">用户总结</span>
+                    <div class="star-line">
+                        <textarea class="descript">very good！服务很周到！！
+                        </textarea>
+                    </div>
+                </li>
+                <li class="label bill-workersay">
+                    <span class="li-name">工程师总结</span>
+                    <div class="star-line">
+                        <textarea class="descript">圆满完成任务！！
+                        </textarea>
+                    </div>
+                </li>
+            </ul>
+            </form>
+            <div class="do-repair">
+                <a href="#" class="btn">立即报修</a>
+            </div>
+        </div>
+    </div><script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $('.funcC').on('click', function(e) {
+            var $cut = $('.funcC-cut')[0],
+                $add = $('.funcC-add')[0],
+                $val = $('.funcC-num').text() - 0;
+            // 点击减号
+            if (e.target == $cut) {
+                if ($val == 0) {
+                    return;
+                }
+                $val--;
+            } 
+            // 点击加号
+            else if (e.target == $add) {
+                $val++;
+            }
+            $('.funcC-num').text($val);
+        })
+    })
+    </script>
+</body>
+</html>

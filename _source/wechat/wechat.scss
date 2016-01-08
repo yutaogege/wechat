@@ -352,3 +352,66 @@ body {
         right: rem-calc(2);
     }
 }
+.bill-table{
+    .label{
+        line-height: rem-calc(70);
+        overflow: hidden;
+        padding:rem-calc(0 26);
+    }
+}
+.list-show{
+    float: right;
+    color: #a5a5a5;
+    font-size: rem-calc(24);
+    img{
+        width: rem-calc(63);
+        height: rem-calc(63);
+        vertical-align: top;
+        margin-top:rem-calc(3);
+    }
+    input[type=text]{
+        color: #818181;
+        text-align: right;
+        width: rem-calc(300);
+    }
+    input[type=data]{
+        width: rem-calc(64);
+        height: rem-calc(33);
+        text-align: center;
+        color: #fff;
+        font-size: rem-calc(15);
+        background: #4285f4;
+        cursor: pointer;
+        border-radius: rem-calc(5);
+    }
+}
+.bill-prob{
+    .descript{
+        width: rem-calc(400);
+        color: #a5a5a5;
+        margin-top: rem-calc(18);
+        height: rem-calc(90);
+    }
+}
+.star-line{
+    span{
+        width: rem-calc(200);
+        height: rem-calc(34);
+        margin:rem-calc(10 0 20);
+        display: block;
+        background:image-url('back-star.jpg') repeat;
+        float: right;
+        background-size: contain;
+    }
+    i{
+        display: block;
+        height: rem-calc(34);
+        background:image-url('choose-star.jpg') repeat;
+        background-size: contain;
+    }
+    .descript{
+        color: #a5a5a5;
+        height: rem-calc(120);
+        padding: rem-calc(0 40);
+    }
+}

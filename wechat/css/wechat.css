@@ -552,19 +552,41 @@ body {
 }
 
 .ad-mol {
-  width: 20.91667rem;
+  width: 21.33333rem;
   margin: 0 auto;
   padding: 0.66667rem 0;
 }
 .ad-mol img {
   width: 100%;
+  border: 1px solid #d8d2d2;
+}
+.ad-mol .bor {
   vertical-align: bottom;
+  border-radius: 5px;
   border: 0.125rem solid #d8d2d2;
+}
+.ad-mol p {
+  font-size: 1rem;
+  color: #a5a5a5;
 }
 .ad-mol .text {
   margin-top: 1.25rem;
-  font-size: 1rem;
-  color: #a5a5a5;
+}
+
+.code-wrap {
+  background: #fff;
+  padding: 1.08333rem 0;
+}
+.code-wrap .point {
+  left: -2.08333rem;
+}
+
+.code {
+  width: 15.16667rem;
+  height: 15.16667rem;
+  margin: 0 auto;
+  background: url('../images/code.jpg?1452257413');
+  background-size: contain;
 }
 
 /*# sourceMappingURL=wechat.css.map */

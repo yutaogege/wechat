@@ -55,7 +55,7 @@ body {
 }
 .module{margin-bottom:rem-calc(10);}
 .title {
-    font-size: rem-calc(28);
+    font-size: rem-calc(30);
     color: #666677;
     height: rem-calc(70);
     line-height: rem-calc(70);
@@ -85,7 +85,7 @@ body {
     overflow: hidden;
     background: #fff;
     span {
-        font-size: rem-calc(26);
+        font-size: rem-calc(30);
         color: #818181;
         line-height: rem-calc(52);
     }
@@ -275,4 +275,64 @@ body {
 
 .wrap-hide {
     display: none;
+}
+
+.label{
+    font-size: rem-calc(30);
+    color: #818181;
+    line-height: rem-calc(54);
+    border-bottom: 1px solid #efeff4;
+    background: #fff;
+    padding: rem-calc(10 26);
+}
+
+.combo{
+    padding:rem-calc(36 32);
+    background: #fff;
+    text-align: center;
+    overflow: hidden;
+    li{
+        margin:rem-calc(0 9);
+        height:rem-calc(217);
+        width:rem-calc(171);
+        border: 1px solid #050001;
+        border-radius: rem-calc(5);
+        overflow: hidden;
+        float: left;
+    }
+    .price{
+        width: 100%;
+        height: rem-calc(108);
+        line-height: rem-calc(108);
+        background: #a5a5a5;
+        color: #fff;
+        font-size: rem-calc(30);
+        border-radius: rem-calc(5);
+    }
+    .descpt{
+        color: #a5a5a5;
+        font-size: rem-calc(24);
+        margin: rem-calc(30 30);
+        height: rem-calc(109);
+        // overflow: hidden;
+        // white-space: nowrap;
+        // text-overflow: ellipsis;
+    }
+    .choose{
+        .price{background: #4285f4;}
+    }
+}
+.inall-wrap{
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: rem-calc(76);
+}
+.in-all{
+    line-height: rem-calc(37);
+    padding: rem-calc(35 50);
+    font-size:rem-calc(36);
+    color: #666677;
+    background: #fff;
+    b{
+        float: right;
+    }
 }

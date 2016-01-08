@@ -1,0 +1,13 @@
+.n-default .msg-box{margin-left: 10px;overflow: hidden;zoom: 1;} /* 提示容器 */
+.n-default .n-icon{display: inline-block;width: 14px;height: 14px;vertical-align: text-top;margin-right: 8px;
+/*background-image: url(http://cn-style.gcimg.net/i/201403/OKlcC6wm1g.png);background-repeat: no-repeat;*/
+background-image: url(http://cn-style.gcimg.net/i/201406/TiseBOHfDt.png);
+}
+.n-default .n-tip{color: #9a9a9a;} /* 焦点提示 */
+.n-default .n-tip .n-icon{background-position: 0 -28px;}
+.n-default .n-ok{color: #9a9a9a;}
+.n-default .n-ok .n-icon{background-position: 0 0;}
+.n-default .n-error{color: #e8592d;} /* 错误提示 */
+.n-default .n-error .n-icon{background-position: 0 -14px;}
+.n-default input.n-invalid{border-color: #e8592d;}
+.n-default .n-loading .n-icon{background: url(http://cn-style.gcimg.net/i/201403/jhUWaButVs.gif) 0 0 no-repeat;}

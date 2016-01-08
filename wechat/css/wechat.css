@@ -290,21 +290,21 @@ body {
   color: #666677;
   font-size: 1.25rem;
 }
-.fill-info .opacity {
+.opacity {
   position: relative;
   height: 1.79167rem;
   margin-left: 6.58333rem;
   border-radius: 3px;
   border: 1px solid #c0bfbf;
 }
-.fill-info input, .fill-info select {
+.opacity input, .opacity select {
   border: none;
   width: 100%;
   height: 1.875rem;
   padding: 0 0.41667rem;
   box-sizing: border-box;
 }
-.fill-info .arrow-down {
+.opacity .arrow-down {
   background: url(../images/arrow-down.jpg) no-repeat center right;
   background-size: 100%;
   position: absolute;
@@ -514,6 +514,23 @@ body {
   color: #a5a5a5;
   height: 5rem;
   padding: 0 1.66667rem;
+}
+
+.show-num {
+  font-size: 1rem;
+  color: #a5a5a5;
+  float: right;
+}
+
+.show-list .opacity {
+  border: 1px solid #050001;
+  width: 8.33333rem;
+  float: right;
+  line-height: 1.79167rem;
+  margin: 0.41667rem 0 0 0;
+}
+.show-list .label {
+  line-height: 2.70833rem;
 }
 
 /*# sourceMappingURL=wechat.css.map */

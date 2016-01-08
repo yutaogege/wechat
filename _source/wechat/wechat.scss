@@ -186,30 +186,34 @@ body {
         color: #666677;
         font-size: rem-calc(30);
     }
-    .opacity {
-        position: relative;
-        height: rem-calc(43);
-        margin-left: rem-calc(158);
-        border-radius: 3px;
-        border: 1px solid #c0bfbf;
+    @at-root {
+        .opacity {
+            position: relative;
+            height: rem-calc(43);
+            margin-left: rem-calc(158);
+            border-radius: 3px;
+            border: 1px solid #c0bfbf;
+            input, select {
+                border: none;
+                width: 100%;
+                height: rem-calc(45);
+                padding: rem-calc(0 10);
+                box-sizing: border-box;
+            }
+            .arrow-down {
+                background: url(../images/arrow-down.jpg) no-repeat center right;
+                background-size: 100%;
+                position: absolute;
+                top: rem-calc(16);
+                right: rem-calc(17);
+                height: rem-calc(14);
+                width: rem-calc(25);
+                display: block;
+            }
+
+        }
     }
-    input, select {
-        border: none;
-        width: 100%;
-        height: rem-calc(45);
-        padding: rem-calc(0 10);
-        box-sizing: border-box;
-    }
-    .arrow-down {
-        background: url(../images/arrow-down.jpg) no-repeat center right;
-        background-size: 100%;
-        position: absolute;
-        top: rem-calc(16);
-        right: rem-calc(17);
-        height: rem-calc(14);
-        width: rem-calc(25);
-        display: block;
-    }
+    
 }
 
 .use-addrs {
@@ -413,5 +417,23 @@ body {
         color: #a5a5a5;
         height: rem-calc(120);
         padding: rem-calc(0 40);
+    }
+}
+.show-num{
+    font-size: rem-calc(24);
+    color: #a5a5a5;
+    float: right;
+}
+
+.show-list{
+    .opacity{
+        border: 1px solid #050001;
+        width: rem-calc(200);
+        float:right;
+        line-height: rem-calc(43);
+        margin: rem-calc(10 0 0 0);
+    }
+    .label{
+        line-height: rem-calc(65);
     }
 }

@@ -489,3 +489,84 @@ body {
     background:image-url('code.jpg');
     background-size: contain;
 }
+.chart-goods .list-show img{
+    width: rem-calc(165);
+    height: rem-calc(115);
+    margin-bottom: rem-calc(20);
+}
+.points-change{
+    padding: rem-calc(13 26);
+    .goods-pic{
+        background: #fff;
+        img{
+            width: 100%;
+        }
+    }
+}
+.goods-info{color: #a5a5a5}
+.info-title{font-size: rem-calc(24);}
+.info-points{font-size: rem-calc(30);text-align: right;margin: rem-calc(8 0)}
+
+.do-change {
+    padding:rem-calc(30 0);
+    background: #efeff4;
+    a {
+        width: rem-calc(480);
+        height: rem-calc(88);
+        line-height: rem-calc(88);
+        margin: 0 auto;
+    }
+}
+.chart-page{background: #efeff4;}
+.label.tophold{
+    margin-top: rem-calc(10);
+    line-height: 1.5;
+    padding: rem-calc(20 26 0);
+    .point{
+        top:rem-calc(-40);
+    }
+}
+.change-zone{overflow: hidden;
+    .modu{
+        width: 33%;float: left;
+        .block{margin: rem-calc(15 15);}
+    }
+}
+.gooods-show{
+    border: 1px solid #e6e6e6;
+    img{
+        width: 100%;
+        vertical-align: middle;
+    }
+}
+.goods-name{font-size: rem-calc(24);color: #a5a5a5;margin-top: rem-calc(8);}
+.price-get{
+    overflow: hidden;
+    margin: rem-calc(8 0);
+    .price{
+        float: left;
+        color: red;
+    }
+    .get{
+        float: right;
+        width: rem-calc(64);
+        height: rem-calc(33);
+        line-height: rem-calc(33);
+        text-align: center;
+        color: #fff;
+        font-size: rem-calc(15);
+        background: #4285f4;
+        border-radius: rem-calc(5);
+    }
+}
+.label.changepage{
+    border-bottom: none;
+    .turn-arrow{
+        &:after {
+            content: "更多>>";
+        }
+    }
+}
+.last-m{
+    margin-bottom: rem-calc(40);
+}

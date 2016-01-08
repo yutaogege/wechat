@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
@@ -587,6 +588,116 @@ body {
   margin: 0 auto;
   background: url('../images/code.jpg?1452257413');
   background-size: contain;
+}
+
+.chart-goods .list-show img {
+  width: 6.875rem;
+  height: 4.79167rem;
+  margin-bottom: 0.83333rem;
+}
+
+.points-change {
+  padding: 0.54167rem 1.08333rem;
+}
+.points-change .goods-pic {
+  background: #fff;
+}
+.points-change .goods-pic img {
+  width: 100%;
+}
+
+.goods-info {
+  color: #a5a5a5;
+}
+
+.info-title {
+  font-size: 1rem;
+}
+
+.info-points {
+  font-size: 1.25rem;
+  text-align: right;
+  margin: 0.33333rem 0;
+}
+
+.do-change {
+  padding: 1.25rem 0;
+  background: #efeff4;
+}
+.do-change a {
+  width: 20rem;
+  height: 3.66667rem;
+  line-height: 3.66667rem;
+  margin: 0 auto;
+}
+
+.chart-page {
+  background: #efeff4;
+}
+
+.label.tophold {
+  margin-top: 0.41667rem;
+  line-height: 1.5;
+  padding: 0.83333rem 1.08333rem 0;
+}
+.label.tophold .point {
+  top: -1.66667rem;
+}
+
+.change-zone {
+  overflow: hidden;
+}
+.change-zone .modu {
+  width: 33%;
+  float: left;
+}
+.change-zone .modu .block {
+  margin: 0.625rem 0.625rem;
+}
+
+.gooods-show {
+  border: 1px solid #e6e6e6;
+}
+.gooods-show img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.goods-name {
+  font-size: 1rem;
+  color: #a5a5a5;
+  margin-top: 0.33333rem;
+}
+
+.price-get {
+  overflow: hidden;
+  margin: 0.33333rem 0;
+}
+.price-get .price {
+  float: left;
+  color: red;
+}
+.price-get .get {
+  float: right;
+  width: 2.66667rem;
+  height: 1.375rem;
+  line-height: 1.375rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.625rem;
+  background: #4285f4;
+  border-radius: 0.20833rem;
+}
+
+.label.changepage {
+  border-bottom: none;
+}
+.label.changepage .turn-arrow:after {
+  content: "更多>>";
+}
+
+.last-m {
+  margin-bottom: 1.66667rem;
 }
 
 /*# sourceMappingURL=wechat.css.map */

@@ -551,4 +551,20 @@ body {
   top: -2.08333rem;
 }
 
+.ad-mol {
+  width: 20.91667rem;
+  margin: 0 auto;
+  padding: 0.66667rem 0;
+}
+.ad-mol img {
+  width: 100%;
+  vertical-align: bottom;
+  border: 0.125rem solid #d8d2d2;
+}
+.ad-mol .text {
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  color: #a5a5a5;
+}
+
 /*# sourceMappingURL=wechat.css.map */

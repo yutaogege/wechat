@@ -453,3 +453,19 @@ body {
         top:rem-calc(-50);
     }
 }
+
+.ad-mol{
+    width: rem-calc(502);
+    margin: 0 auto;
+    padding: rem-calc(16 0);
+    img{
+        width: 100%;
+        vertical-align: bottom;
+        border:rem-calc(3) solid #d8d2d2;
+    } 
+    .text{
+        margin-top: rem-calc(30);
+        font-size: rem-calc(24);
+        color: #a5a5a5;
+    }
+}

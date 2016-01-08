@@ -338,3 +338,17 @@ body {
         float: right;
     }
 }
+.point{
+    font-size: rem-calc(24);
+    color: #a5a5a5;
+    margin-left: rem-calc(30);
+}
+.turn-arrow{
+    position: relative;
+    display: block;
+    &:after {
+        content: ">";
+        position: absolute;
+        right: rem-calc(2);
+    }
+}

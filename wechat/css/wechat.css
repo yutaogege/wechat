@@ -439,4 +439,20 @@ body {
   float: right;
 }
 
+.point {
+  font-size: 1rem;
+  color: #a5a5a5;
+  margin-left: 1.25rem;
+}
+
+.turn-arrow {
+  position: relative;
+  display: block;
+}
+.turn-arrow:after {
+  content: ">";
+  position: absolute;
+  right: 0.08333rem;
+}
+
 /*# sourceMappingURL=wechat.css.map */

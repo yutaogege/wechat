@@ -152,6 +152,7 @@ body {
 
 .module {
   margin-bottom: 0.41667rem;
+  background: #fff;
 }
 
 .title {
@@ -355,8 +356,8 @@ body {
   text-align: center;
   height: 2.29167rem;
   line-height: 2.29167rem;
-  border: 2px solid #d8d2d2;
-  border-radius: 8px;
+  border: 0.08333rem solid #d8d2d2;
+  border-radius: 0.33333rem;
   background: #fff;
   margin: 0.83333rem auto;
   color: #666677;
@@ -387,18 +388,20 @@ body {
 }
 
 .combo {
-  padding: 1.5rem 1.33333rem;
+  margin: 0 auto;
+  width: 24rem;
   background: #fff;
+  height: 10.66667rem;
   text-align: center;
   overflow: hidden;
+  padding-top: 1.5rem;
 }
 .combo li {
-  margin: 0 0.375rem;
+  margin: 0 1.5%;
   height: 9.04167rem;
-  width: 7.125rem;
+  width: 29%;
   border: 1px solid #050001;
   border-radius: 0.20833rem;
-  overflow: hidden;
   float: left;
 }
 .combo .price {

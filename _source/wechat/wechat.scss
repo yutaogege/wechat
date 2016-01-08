@@ -53,7 +53,7 @@ body {
         }
     }
 }
-.module{margin-bottom:rem-calc(10);}
+.module{margin-bottom:rem-calc(10);background: #fff;}
 .title {
     font-size: rem-calc(30);
     color: #666677;
@@ -254,8 +254,8 @@ body {
         text-align: center;
         height: rem-calc(55);
         line-height: rem-calc(55);
-        border: 2px solid #d8d2d2;
-        border-radius: 8px;
+        border: rem-calc(2) solid #d8d2d2;
+        border-radius: rem-calc(8);
         background: #fff;
         margin: rem-calc(20) auto;
         color: #666677;
@@ -287,17 +287,19 @@ body {
 }
 
 .combo{
-    padding:rem-calc(36 32);
+    margin:0 auto;
+    width: rem-calc(576);
     background: #fff;
+    height: rem-calc(256);
     text-align: center;
     overflow: hidden;
+    padding-top: rem-calc(36);
     li{
-        margin:rem-calc(0 9);
+        margin:0 1.5%;
         height:rem-calc(217);
-        width:rem-calc(171);
+        width:29%;
         border: 1px solid #050001;
         border-radius: rem-calc(5);
-        overflow: hidden;
         float: left;
     }
     .price{

@@ -14,36 +14,16 @@
         </header>
         <div class="contain">
         	<ul class="module">
-                <li class="label"><a href="#" class="turn-arrow">我的报修单</a></li>
-                <li class="label"><a href="#" class="turn-arrow">积分兑换<span class="point">2000</span></a></li>
-                <li class="label"><a href="#" class="turn-arrow">账号绑定</a></li>
-                <li class="label"><a href="#" class="turn-arrow">我的地址</a></li>
-                <li class="label"><a href="#" class="turn-arrow">积分订单</a></li>
-                <li class="label"><a href="#" class="turn-arrow">体验反馈</a></li>
+                <li class="label"><a href="#" class="turn-arrow"><label>我的报修单</label></a></li>
+                <li class="label"><a href="#" class="turn-arrow"><label>积分兑换</label><span class="point">2000</span></a></li>
+                <li class="label"><a href="#" class="turn-arrow"><label>账号绑定</label></a></li>
+                <li class="label"><a href="#" class="turn-arrow"><label>我的地址</label></a></li>
+                <li class="label"><a href="#" class="turn-arrow"><label>积分订单</label></a></li>
+                <li class="label"><a href="#" class="turn-arrow"><label>体验反馈</label></a></li>
             </ul>
         </div>
     </div>
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript">
-    $(function() {
-        $('.funcC').on('click', function(e) {
-            var $cut = $('.funcC-cut')[0],
-                $add = $('.funcC-add')[0],
-                $val = $('.funcC-num').text() - 0;
-            // 点击减号
-            if (e.target == $cut) {
-                if ($val == 0) {
-                    return;
-                }
-                $val--;
-            } 
-            // 点击加号
-            else if (e.target == $add) {
-                $val++;
-            }
-            $('.funcC-num').text($val);
-        })
-    })
-    </script>
+    <script type="text/javascript"> </script>
 </body>
 </html>

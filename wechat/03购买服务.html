@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>购买服务</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="css/wechat.css">
 </head>
+
 <body>
     <div class="wrapper">
         <header class="topBar">
@@ -13,7 +15,7 @@
             <h2 class="topBar-title">购买服务</h2>
         </header>
         <div class="contain">
-        	<dl class="module">
+            <dl class="module">
                 <dd>
                     <div class="func-count">
                         <ul class="funcC">
@@ -28,37 +30,38 @@
                     </div>
                     <h4 class="label">套餐</h4>
                     <ul class="combo">
-                    	<li class="goods1 choose">
-                    		<div class="des-wrap">
-                                <p class="price">398/次</p>
-                        		<p class="descpt">处理两台PC故障</p>
+                        <li class="goods1 choose">
+                            <div class="des-wrap">
+                                <p class="price"><span>398</span>/次</p>
+                                <p class="descpt">处理两台PC故障</p>
                             </div>
-                    	</li>
-                    	<li class="goods2">
-                    		<div class="des-wrap">
-                                <p class="price">2900/10次</p>
-                        		<p class="descpt">处理两台PC故障</p>
+                        </li>
+                        <li class="goods2">
+                            <div class="des-wrap">
+                                <p class="price"><span>2900</span>/10次</p>
+                                <p class="descpt">处理两台PC故障</p>
                             </div>
-                    	</li>
-                    	<li class="goods3">
-                    		<div class="des-wrap">
-                                <p class="price">8600/30次</p>
-                        		<p class="descpt">处理两台PC故障</p>
+                        </li>
+                        <li class="goods3">
+                            <div class="des-wrap">
+                                <p class="price"><span>8600</span>/30次</p>
+                                <p class="descpt">处理两台PC故障</p>
                             </div>
-                    	</li>
+                        </li>
                     </ul>
                 </dd>
             </dl>
             <div class="inall-wrap">
-            	<p class="in-all">总价：
-            		<b>￥2900</b>
-            	</p>
+                <p class="in-all">总价：
+                    <b>￥<span>0</span></b>
+                </p>
             </div>
             <div class="do-repair">
                 <a href="#" class="btn">立即支付</a>
             </div>
         </div>
-    </div><script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript">
     $(function() {
         $('.funcC').on('click', function(e) {
@@ -71,14 +74,34 @@
                     return;
                 }
                 $val--;
-            } 
+            }
             // 点击加号
             else if (e.target == $add) {
                 $val++;
             }
             $('.funcC-num').text($val);
         })
+
+        function calc_price() {
+            var $price = 0;
+            $('.combo li').each(function(index, el) {
+                if ($(this).hasClass('choose')) {
+                    $price += $(this).find('span').text() - 0;
+                }
+            })
+            $('.in-all b span').text($price)
+        }
+        calc_price();
+        $('.combo li').on('click', function() {
+            $(this).toggleClass('choose');
+
+            calc_price();
+
+        })
+
+
     })
     </script>
 </body>
+
 </html>

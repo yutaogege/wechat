@@ -3,6 +3,7 @@ $rem-base:24px;
 $reset:true;
 $Response:true;
 @import "compass", "moblie-mixin";
+@import "sprites";
 body {
     max-width: 640px;
     margin: 0 auto;
@@ -164,7 +165,8 @@ body {
 .do-repair {
     padding: rem-calc(69 0);
     a {
-        width: rem-calc(480);
+        width: 90%;
+        max-width: rem-calc(480);
         height: rem-calc(88);
         line-height: rem-calc(88);
         margin: 0 auto;
@@ -289,23 +291,31 @@ body {
     background: #fff;
     padding: rem-calc(10 26);
     overflow: hidden;
+    text-align: right;
+    label{
+        float: left;
+    }
 }
 
 .combo{
-    margin:0 auto;
-    width: rem-calc(576);
+    margin:rem-calc(0 40);
     background: #fff;
     height: rem-calc(256);
     text-align: center;
     overflow: hidden;
     padding-top: rem-calc(36);
     li{
-        margin:0 1.5%;
+        $w:3%;
         height:rem-calc(217);
-        width:29%;
+        width:(100% - $w * 2)/3;
+        box-sizing:border-box;
         border: 1px solid #050001;
         border-radius: rem-calc(5);
         float: left;
+        cursor: pointer;
+        &+li{
+            margin-left: $w;
+        }
     }
     .price{
         width: 100%;
@@ -319,11 +329,7 @@ body {
     .descpt{
         color: #a5a5a5;
         font-size: rem-calc(24);
-        margin: rem-calc(30 30);
-        height: rem-calc(109);
-        // overflow: hidden;
-        // white-space: nowrap;
-        // text-overflow: ellipsis;
+        padding: rem-calc(30 20 0);
     }
     .choose{
         .price{background: #4285f4;}
@@ -354,19 +360,35 @@ body {
     &:after {
         content: ">";
         position: absolute;
+        top: 50%;
         right: rem-calc(2);
+        @include transform(translate3d(0,-50%,0));
     }
 }
 .bill-table{
+    text-align: right;
     .label{
         line-height: rem-calc(70);
         padding:rem-calc(0 26);
+        label{
+            float: left;
+        }
+    }
+}
+.bill-prob{
+    label{
+        float: left;
+    }
+    .descript{
+        margin-top: rem-calc(18);
+        height: rem-calc(90);
     }
 }
 .list-show{
-    float: right;
+    position: relative;
     color: #a5a5a5;
     font-size: rem-calc(24);
+    margin-left: rem-calc(157);
     img{
         width: rem-calc(63);
         height: rem-calc(63);
@@ -376,11 +398,23 @@ body {
     input[type=text]{
         color: #818181;
         text-align: right;
-        width: rem-calc(300);
+        width: 100%;
     }
-    input[type=data]{
+    input[type^=date]{
+        position: absolute;
+        right: 0;
+        z-index: 1;
+        height: 100%;
+        width: 60%;
+        background: red;
+        @include opacity(0);
+    }
+    .label & label{
+        float: right;
         width: rem-calc(64);
-        height: rem-calc(33);
+        line-height: rem-calc(33);
+        margin-top: rem-calc(18);
+        margin-left: rem-calc(5);
         text-align: center;
         color: #fff;
         font-size: rem-calc(15);
@@ -389,29 +423,22 @@ body {
         border-radius: rem-calc(5);
     }
 }
-.descript.inline{
-    width: rem-calc(400);
+
+.descript{
     color: #a5a5a5;
-    margin-top: rem-calc(18);
-    height: rem-calc(90);
+    
 }
 
 .star-line{
     span{
-        width: rem-calc(200);
-        height: rem-calc(34);
         margin:rem-calc(10 0 20);
-        display: block;
-        background:image-url('back-star.jpg') repeat;
-        float: right;
-        background-size: contain;
+        display: inline-block;
+        @include rem-sprite($star,back);
+        &.active{
+            @include rem-sprite($star,choose);
+        }
     }
-    i{
-        display: block;
-        height: rem-calc(34);
-        background:image-url('choose-star.jpg') repeat;
-        background-size: contain;
-    }
+    
     .descript{
         color: #a5a5a5;
         height: rem-calc(120);
@@ -421,7 +448,6 @@ body {
 .show-num{
     font-size: rem-calc(24);
     color: #a5a5a5;
-    float: right;
 }
 
 .show-list{
@@ -432,8 +458,15 @@ body {
         line-height: rem-calc(43);
         margin: rem-calc(10 0 0 0);
     }
+    a{
+        display: block;
+    }
     .label{
+        text-align: right;
         line-height: rem-calc(65);
+        label{
+            float: left;
+        }
     }
 }
 .logo{
@@ -444,13 +477,23 @@ body {
     background-size: contain;
 }
 
-.label.introdu{
+.introdu{
     border: none;
+    .list-show{
+        text-align: left;
+    }
+    label{
+        float: left;
+    }
+    .innerbox{
+        margin-left: rem-calc(120);
+    }
     .point{
         margin-left: rem-calc(160);
         display: block;
         position: relative;
-        top:rem-calc(-50);
+        text-align: left;
+        // top:rem-calc(-50);
     }
 }
 
@@ -465,7 +508,7 @@ body {
     .bor{
         vertical-align: bottom;
         border-radius: 5px;
-        border:rem-calc(3) solid #d8d2d2;
+        border:1px solid #d8d2d2;
     }
     p{
        font-size: rem-calc(24);
@@ -521,9 +564,9 @@ body {
 .label.tophold{
     margin-top: rem-calc(10);
     line-height: 1.5;
-    padding: rem-calc(20 26 0);
+    // padding: rem-calc(20 26 0);
     .point{
-        top:rem-calc(-40);
+        // top:rem-calc(-40);
     }
 }
 .change-zone{overflow: hidden;
@@ -561,6 +604,7 @@ body {
 }
 .label.changepage{
     border-bottom: none;
+    text-align: left;
     .turn-arrow{
         &:after {
             content: "更多>>";
@@ -569,4 +613,33 @@ body {
 }
 .last-m{
     margin-bottom: rem-calc(40);
+}
+
+.inner-box{
+    text-align: left;
+}
+.jifen{
+    font-size: rem-calc(24);
+}
+.tuiguang{
+    .label{
+        text-align: left;
+        a{
+            margin-left: rem-calc(60);
+            font-size: rem-calc(30);
+            color: #a5a5a5;
+        }
+    }
+    dd{
+        padding: rem-calc(20 36);
+        label{
+            font-size: rem-calc(30);
+            color: #666677;
+        }
+        .innerbox{
+            font-size: rem-calc(24);
+            color: #a5a5a5;
+            line-height: rem-calc(40);
+        }
+    }
 }

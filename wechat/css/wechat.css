@@ -97,11 +97,28 @@ a {
     font-size: 18px;
   }
 }
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 640px) {
   html {
     font-size: 24px;
   }
 }
+.star-back, .star-choose, .star-line span, .star-line span.active {
+  background: url('../images/star-se86508bf7e.png');
+  background-size: 1.66667rem 3.45833rem;
+  background-repeat: no-repeat;
+}
+.star-back {
+  width: 1.66667rem;
+  height: 1.41667rem;
+  background-position: 0 0;
+}
+
+.star-choose {
+  width: 1.66667rem;
+  height: 1.41667rem;
+  background-position: 0 -2.04167rem;
+}
+
 body {
   max-width: 640px;
   margin: 0 auto;
@@ -134,7 +151,7 @@ body {
   height: 1.83333rem;
   margin-right: 0.33333rem;
   vertical-align: -5%;
-  background: url('../images/arrow.jpg?1452042032') no-repeat;
+  background: url('../images/arrow.jpg?1452049268') no-repeat;
   background-size: 1.04167rem 1.83333rem;
 }
 
@@ -269,7 +286,8 @@ body {
   padding: 2.875rem 0;
 }
 .do-repair a {
-  width: 20rem;
+  width: 90%;
+  max-width: 20rem;
   height: 3.66667rem;
   line-height: 3.66667rem;
   margin: 0 auto;
@@ -387,11 +405,14 @@ body {
   background: #fff;
   padding: 0.41667rem 1.08333rem;
   overflow: hidden;
+  text-align: right;
+}
+.label label {
+  float: left;
 }
 
 .combo {
-  margin: 0 auto;
-  width: 24rem;
+  margin: 0 1.66667rem;
   background: #fff;
   height: 10.66667rem;
   text-align: center;
@@ -399,12 +420,16 @@ body {
   padding-top: 1.5rem;
 }
 .combo li {
-  margin: 0 1.5%;
   height: 9.04167rem;
-  width: 29%;
+  width: 31.33333%;
+  box-sizing: border-box;
   border: 1px solid #050001;
   border-radius: 0.20833rem;
   float: left;
+  cursor: pointer;
+}
+.combo li + li {
+  margin-left: 3%;
 }
 .combo .price {
   width: 100%;
@@ -418,8 +443,7 @@ body {
 .combo .descpt {
   color: #a5a5a5;
   font-size: 1rem;
-  margin: 1.25rem 1.25rem;
-  height: 4.54167rem;
+  padding: 1.25rem 0.83333rem 0;
 }
 .combo .choose .price {
   background: #4285f4;
@@ -454,18 +478,38 @@ body {
 .turn-arrow:after {
   content: ">";
   position: absolute;
+  top: 50%;
   right: 0.08333rem;
+  -moz-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  -webkit-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
 }
 
+.bill-table {
+  text-align: right;
+}
 .bill-table .label {
   line-height: 2.91667rem;
   padding: 0 1.08333rem;
 }
+.bill-table .label label {
+  float: left;
+}
+
+.bill-prob label {
+  float: left;
+}
+.bill-prob .descript {
+  margin-top: 0.75rem;
+  height: 3.75rem;
+}
 
 .list-show {
-  float: right;
+  position: relative;
   color: #a5a5a5;
   font-size: 1rem;
+  margin-left: 6.54167rem;
 }
 .list-show img {
   width: 2.625rem;
@@ -476,11 +520,24 @@ body {
 .list-show input[type=text] {
   color: #818181;
   text-align: right;
-  width: 12.5rem;
+  width: 100%;
 }
-.list-show input[type=data] {
+.list-show input[type^=date] {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  height: 100%;
+  width: 60%;
+  background: red;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+.label .list-show label {
+  float: right;
   width: 2.66667rem;
-  height: 1.375rem;
+  line-height: 1.375rem;
+  margin-top: 0.75rem;
+  margin-left: 0.20833rem;
   text-align: center;
   color: #fff;
   font-size: 0.625rem;
@@ -489,27 +546,23 @@ body {
   border-radius: 0.20833rem;
 }
 
-.descript.inline {
-  width: 16.66667rem;
+.descript {
   color: #a5a5a5;
-  margin-top: 0.75rem;
-  height: 3.75rem;
 }
 
 .star-line span {
-  width: 8.33333rem;
-  height: 1.41667rem;
   margin: 0.41667rem 0 0.83333rem;
-  display: block;
-  background: url('../images/back-star.jpg?1452244165') repeat;
-  float: right;
-  background-size: contain;
+  display: inline-block;
 }
-.star-line i {
-  display: block;
+.star-line span {
+  width: 1.66667rem;
   height: 1.41667rem;
-  background: url('../images/choose-star.jpg?1452244165') repeat;
-  background-size: contain;
+  background-position: 0 0;
+}
+.star-line span.active {
+  width: 1.66667rem;
+  height: 1.41667rem;
+  background-position: 0 -2.04167rem;
 }
 .star-line .descript {
   color: #a5a5a5;
@@ -520,7 +573,6 @@ body {
 .show-num {
   font-size: 1rem;
   color: #a5a5a5;
-  float: right;
 }
 
 .show-list .opacity {
@@ -530,26 +582,42 @@ body {
   line-height: 1.79167rem;
   margin: 0.41667rem 0 0 0;
 }
+.show-list a {
+  display: block;
+}
 .show-list .label {
+  text-align: right;
   line-height: 2.70833rem;
+}
+.show-list .label label {
+  float: left;
 }
 
 .logo {
   width: 6.25rem;
   height: 7.08333rem;
   margin: 1.08333rem auto;
-  background: url('../images/logo.jpg?1452252419');
+  background: url('../images/logo.jpg?1452256459');
   background-size: contain;
 }
 
-.label.introdu {
+.introdu {
   border: none;
 }
-.label.introdu .point {
+.introdu .list-show {
+  text-align: left;
+}
+.introdu label {
+  float: left;
+}
+.introdu .innerbox {
+  margin-left: 5rem;
+}
+.introdu .point {
   margin-left: 6.66667rem;
   display: block;
   position: relative;
-  top: -2.08333rem;
+  text-align: left;
 }
 
 .ad-mol {
@@ -564,7 +632,7 @@ body {
 .ad-mol .bor {
   vertical-align: bottom;
   border-radius: 5px;
-  border: 0.125rem solid #d8d2d2;
+  border: 1px solid #d8d2d2;
 }
 .ad-mol p {
   font-size: 1rem;
@@ -586,7 +654,7 @@ body {
   width: 15.16667rem;
   height: 15.16667rem;
   margin: 0 auto;
-  background: url('../images/code.jpg?1452257413');
+  background: url('../images/code.jpg?1452260226');
   background-size: contain;
 }
 
@@ -638,10 +706,6 @@ body {
 .label.tophold {
   margin-top: 0.41667rem;
   line-height: 1.5;
-  padding: 0.83333rem 1.08333rem 0;
-}
-.label.tophold .point {
-  top: -1.66667rem;
 }
 
 .change-zone {
@@ -691,6 +755,7 @@ body {
 
 .label.changepage {
   border-bottom: none;
+  text-align: left;
 }
 .label.changepage .turn-arrow:after {
   content: "更多>>";
@@ -698,6 +763,35 @@ body {
 
 .last-m {
   margin-bottom: 1.66667rem;
+}
+
+.inner-box {
+  text-align: left;
+}
+
+.jifen {
+  font-size: 1rem;
+}
+
+.tuiguang .label {
+  text-align: left;
+}
+.tuiguang .label a {
+  margin-left: 2.5rem;
+  font-size: 1.25rem;
+  color: #a5a5a5;
+}
+.tuiguang dd {
+  padding: 0.83333rem 1.5rem;
+}
+.tuiguang dd label {
+  font-size: 1.25rem;
+  color: #666677;
+}
+.tuiguang dd .innerbox {
+  font-size: 1rem;
+  color: #a5a5a5;
+  line-height: 1.66667rem;
 }
 
 /*# sourceMappingURL=wechat.css.map */

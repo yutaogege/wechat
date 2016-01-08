@@ -1,0 +1,2 @@
+$star: sprite-map("star/*.png", $spacing: 15px);
+@include rem-sprites($star);

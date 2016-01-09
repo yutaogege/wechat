@@ -401,15 +401,9 @@ body {
         color: #818181;
         text-align: right;
         width: 100%;
-    }
-    input[type^=date]{
-        position: absolute;
-        right: 0;
-        z-index: 1;
-        height: 100%;
-        width: 60%;
-        background: red;
-        @include opacity(0);
+        &.bill-time{
+            width: auto;
+        }
     }
     .label & label{
         float: right;

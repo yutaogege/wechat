@@ -6,6 +6,7 @@
     <title>报修单</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="css/wechat.css">
+    <link rel="stylesheet" type="text/css" href="css/mobiscroll.custom-2.6.2.min.css">
 </head>
 
 <body>
@@ -54,17 +55,17 @@
                     <li class="label bill-startime">
                         <label>入场时间</label>
                         <div class="list-show">
-                            <span>2015-12-22 12:00</span>
+                            <span><input type="text" class="bill-time" name="bill-startime" value="2015-12-22 12:00"></span>
                             <label for="bill-startime">入场</label>
-                            <input type="datetime-local" id="bill-startime" name="bill-startime" value="入场">
                         </div>
                     </li>
                     <li class="label bill-overtime">
                         <label>离场时间</label>
                         <div class="list-show">
-                            <span>2015-12-22 19:00</span>
+                            <span>
+<input type="text" class="bill-time" name="bill-startime" value="2015-12-22 19:00">
+                            </span>
                             <label for="bill-overtime">离场</label>
-                            <input type="datetime-local" id="bill-overtime" name="bill-startime" value="离场">
                         </div>
                     </li>
                     <li class="label bill-count">
@@ -104,43 +105,43 @@
         </div>
     </div>
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/mobiscroll.custom-2.6.2.min.js"></script>
     <script type="text/javascript">
-    function Double(a) {
-        return a < 10 ? "0" + a : a;
-    }
-    $('input[type=datetime-local]').change(function() {
-        var val = $(this).val(),
-            T = new Date(val);
-        var yyyy = T.getFullYear(),
-            MM = T.getMonth() + 1,
-            dd = T.getDate(),
-            HH = T.getHours(),
-            mm = T.getMinutes();
-
-        $(this).parent().find('span').text(yyyy + "-" + Double(MM) + "-" + Double(dd) + " " + Double(HH) + ":" + Double(mm))
-    })
-
-    $('.star-box span').each(function(index, el) {
-        var $this = $(this);
-        $(el).click(function() {
-            if (index == 0) {
-                if ($('.star-box span.active').length > 1) {
-                    $(this).siblings().removeClass('active')
-                } else if ($('.star-box span.active').length == 1) {
-                    $(this).removeClass('active')
-                } else {
-                    $(this).addClass('active')
-                }
-            } else {
-                $('.star-box span').each(function(index, el) {
-                    if ($this.index() >= index) {
-                        $(this).addClass('active')
-                    } else {
+    $(function() {
+        $('.star-box span').each(function(index, el) {
+            var $this = $(this);
+            $(el).click(function() {
+                if (index == 0) {
+                    if ($('.star-box span.active').length > 1) {
+                        $(this).siblings().removeClass('active')
+                    } else if ($('.star-box span.active').length == 1) {
                         $(this).removeClass('active')
+                    } else {
+                        $(this).addClass('active')
                     }
-                })
-            }
+                } else {
+                    $('.star-box span').each(function(index, el) {
+                        if ($this.index() >= index) {
+                            $(this).addClass('active')
+                        } else {
+                            $(this).removeClass('active')
+                        }
+                    })
+                }
+            })
         })
+
+        $('.bill-time').scroller('destroy').scroller($.extend({
+            preset: 'datetime',
+            minDate: new Date(2012, 3, 10, 9, 22),
+            maxDate: new Date(2022, 7, 30, 15, 44),
+            dateFormat: "yy-mm-dd",
+        }, {
+            theme: "default",
+            mode: "scroller",
+            display: "modal",
+            lang: "zh"
+        }));
     })
     </script>
 </body>

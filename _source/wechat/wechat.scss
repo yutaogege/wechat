@@ -8,6 +8,7 @@ body {
     max-width: 640px;
     margin: 0 auto;
     font-family: 'Microsoft Yahei';
+    background: #efeff4;
 }
 
 .topBar{
@@ -50,7 +51,6 @@ body {
 }
 
 .contain {
-    background: #efeff4;
     width: 100%;
     padding-top: rem-calc(10);
     @at-root {
@@ -64,6 +64,9 @@ body {
     }
 }
 .module{margin-bottom:rem-calc(10);background: #fff;}
+.min-white,.show-list{min-height: rem-calc(970);} 
+.min-height{min-height: rem-calc(770);} 
+.code-wrap.min-height{min-height: rem-calc(944);} 
 .title {
     font-size: rem-calc(30);
     color: #666677;
@@ -561,7 +564,6 @@ body {
 
 .do-change {
     padding:rem-calc(30 0);
-    background: #efeff4;
     a {
         width: rem-calc(480);
         height: rem-calc(88);
@@ -569,7 +571,6 @@ body {
         margin: 0 auto;
     }
 }
-.chart-page{background: #efeff4;}
 .label.tophold{
     margin-top: rem-calc(10);
     line-height: 1.5;
@@ -699,14 +700,33 @@ body {
     text-align: left;
     padding-left: rem-calc(26);
     color: #666;
-    input[type=radio] {
-        &:after {
-            border: 1px solid #666;
-            margin-top: rem-calc(-3);
-        }
-    }
     .tip{font-size: rem-calc(18);
         color: #8e8e99;}
+    input[type=checkbox] {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: rem-calc(18);
+        width: rem-calc(13);
+        height: rem-calc(13);
+        &:after {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 1px solid #666;
+            margin-top: rem-calc(-3);
+            cursor: pointer;
+        }
+        &:checked {
+            &:after {
+                background: #4285F4;
+                border-color: #4285F4;
+            }
+        }
+    }
 }
 .introdu .intro{
     min-height: rem-calc(170);

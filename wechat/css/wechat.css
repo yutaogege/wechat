@@ -123,6 +123,7 @@ body {
   max-width: 640px;
   margin: 0 auto;
   font-family: 'Microsoft Yahei';
+  background: #efeff4;
 }
 
 .topBar {
@@ -165,7 +166,6 @@ body {
 }
 
 .contain {
-  background: #efeff4;
   width: 100%;
   padding-top: 0.41667rem;
 }
@@ -180,6 +180,18 @@ body {
 .module {
   margin-bottom: 0.41667rem;
   background: #fff;
+}
+
+.min-white, .show-list {
+  min-height: 40.41667rem;
+}
+
+.min-height {
+  min-height: 32.08333rem;
+}
+
+.code-wrap.min-height {
+  min-height: 39.33333rem;
 }
 
 .title {
@@ -697,17 +709,12 @@ body {
 
 .do-change {
   padding: 1.25rem 0;
-  background: #efeff4;
 }
 .do-change a {
   width: 20rem;
   height: 3.66667rem;
   line-height: 3.66667rem;
   margin: 0 auto;
-}
-
-.chart-page {
-  background: #efeff4;
 }
 
 .label.tophold {
@@ -854,13 +861,32 @@ body {
   padding-left: 1.08333rem;
   color: #666;
 }
-.set-defult input[type=radio]:after {
-  border: 1px solid #666;
-  margin-top: -0.125rem;
-}
 .set-defult .tip {
   font-size: 0.75rem;
   color: #8e8e99;
+}
+.set-defult input[type=checkbox] {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.75rem;
+  width: 0.54167rem;
+  height: 0.54167rem;
+}
+.set-defult input[type=checkbox]:after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid #666;
+  margin-top: -0.125rem;
+  cursor: pointer;
+}
+.set-defult input[type=checkbox]:checked:after {
+  background: #4285F4;
+  border-color: #4285F4;
 }
 
 .introdu .intro {

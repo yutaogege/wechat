@@ -38,6 +38,15 @@ body {
             background-size: rem-calc(25 44);
         }
     }
+    .right-rule{
+        position: absolute;
+        top: 0;
+        color: #fff;
+        line-height: rem-calc(86);
+        padding-right: rem-calc(22);
+        right: 0;
+        font-size: rem-calc(30);
+    }
 }
 
 .contain {
@@ -286,7 +295,8 @@ body {
 .label{
     font-size: rem-calc(30);
     color: #818181;
-    line-height: rem-calc(54);
+    line-height: rem-calc(40);
+    margin: rem-calc(7 0);
     border-bottom: 1px solid #efeff4;
     background: #fff;
     padding: rem-calc(10 26);
@@ -294,6 +304,9 @@ body {
     text-align: right;
     label{
         float: left;
+    }
+    a{
+        color: #818181;
     }
 }
 
@@ -638,4 +651,64 @@ body {
             line-height: rem-calc(40);
         }
     }
+}
+.feedback{
+    margin-bottom: 0.41667rem;
+    background: #fff;
+    padding: rem-calc(18 30);
+    font-size: rem-calc(24);
+    color: #a5a5a5;
+    .descript{
+        height: rem-calc(200);
+    }
+    .feed-contc{
+        width: 100%;
+        margin: rem-calc(15 0)
+    }
+}
+.receipt-list{
+    margin-bottom: 0.41667rem;
+    background: #fff;
+    font-size: rem-calc(24);
+    color: #666677;
+    line-height: rem-calc(35);
+    ul{
+        overflow: hidden;
+        border-bottom: 1px solid #ebebeb;
+        padding: rem-calc(30 30);
+    }
+    li{
+        float: left;
+    }
+    .adr{
+        width: 90%;
+        // margin-right: rem-calc(20);
+        label{display: block;}
+    }
+    .act{
+        width: 10%;
+        a{
+            display: block;
+        }
+    }
+    .edit{margin-bottom: rem-calc(15);}
+}
+.set-defult{
+    font-size: rem-calc(24);
+    border-top: 1px solid #ebebeb;
+    text-align: left;
+    padding-left: rem-calc(26);
+    color: #666;
+    input[type=radio] {
+        &:after {
+            border: 1px solid #666;
+            margin-top: rem-calc(-3);
+        }
+    }
+    .tip{font-size: rem-calc(18);
+        color: #8e8e99;}
+}
+.introdu .intro{
+    min-height: rem-calc(170);
+    margin-bottom: rem-calc(20);
 }

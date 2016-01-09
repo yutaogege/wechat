@@ -151,8 +151,17 @@ body {
   height: 1.83333rem;
   margin-right: 0.33333rem;
   vertical-align: -5%;
-  background: url('../images/arrow.jpg?1452049268') no-repeat;
+  background: url('../images/arrow.jpg?1452042032') no-repeat;
   background-size: 1.04167rem 1.83333rem;
+}
+.topBar .right-rule {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  line-height: 3.58333rem;
+  padding-right: 0.91667rem;
+  right: 0;
+  font-size: 1.25rem;
 }
 
 .contain {
@@ -400,7 +409,8 @@ body {
 .label {
   font-size: 1.25rem;
   color: #818181;
-  line-height: 2.25rem;
+  line-height: 1.66667rem;
+  margin: 0.29167rem 0;
   border-bottom: 1px solid #efeff4;
   background: #fff;
   padding: 0.41667rem 1.08333rem;
@@ -409,6 +419,9 @@ body {
 }
 .label label {
   float: left;
+}
+.label a {
+  color: #818181;
 }
 
 .combo {
@@ -591,7 +604,7 @@ body {
   width: 6.25rem;
   height: 7.08333rem;
   margin: 1.08333rem auto;
-  background: url('../images/logo.jpg?1452256459');
+  background: url('../images/logo.jpg?1452252419');
   background-size: contain;
 }
 
@@ -648,7 +661,7 @@ body {
   width: 15.16667rem;
   height: 15.16667rem;
   margin: 0 auto;
-  background: url('../images/code.jpg?1452260226');
+  background: url('../images/code.jpg?1452257413');
   background-size: contain;
 }
 
@@ -786,6 +799,73 @@ body {
   font-size: 1rem;
   color: #a5a5a5;
   line-height: 1.66667rem;
+}
+
+.feedback {
+  margin-bottom: 0.41667rem;
+  background: #fff;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  color: #a5a5a5;
+}
+.feedback .descript {
+  height: 8.33333rem;
+}
+.feedback .feed-contc {
+  width: 100%;
+  margin: 0.625rem 0;
+}
+
+.receipt-list {
+  margin-bottom: 0.41667rem;
+  background: #fff;
+  font-size: 1rem;
+  color: #666677;
+  line-height: 1.45833rem;
+}
+.receipt-list ul {
+  overflow: hidden;
+  border-bottom: 1px solid #ebebeb;
+  padding: 1.25rem 1.25rem;
+}
+.receipt-list li {
+  float: left;
+}
+.receipt-list .adr {
+  width: 90%;
+}
+.receipt-list .adr label {
+  display: block;
+}
+.receipt-list .act {
+  width: 10%;
+}
+.receipt-list .act a {
+  display: block;
+}
+.receipt-list .edit {
+  margin-bottom: 0.625rem;
+}
+
+.set-defult {
+  font-size: 1rem;
+  border-top: 1px solid #ebebeb;
+  text-align: left;
+  padding-left: 1.08333rem;
+  color: #666;
+}
+.set-defult input[type=radio]:after {
+  border: 1px solid #666;
+  margin-top: -0.125rem;
+}
+.set-defult .tip {
+  font-size: 0.75rem;
+  color: #8e8e99;
+}
+
+.introdu .intro {
+  min-height: 7.08333rem;
+  margin-bottom: 0.83333rem;
 }
 
 /*# sourceMappingURL=wechat.css.map */

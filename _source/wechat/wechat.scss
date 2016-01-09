@@ -357,6 +357,7 @@ body {
 .turn-arrow{
     position: relative;
     display: block;
+    overflow-y: hidden;
     &:after {
         content: ">";
         position: absolute;
@@ -364,6 +365,7 @@ body {
         right: rem-calc(2);
         @include transform(translate3d(0,-50%,0));
     }
+
 }
 .bill-table{
     text-align: right;

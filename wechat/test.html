@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="demoForm">
+        <fieldset>
+            <legend>用户登录</legend>
+            <p id="info"></p>
+            <p>
+                <label for="username">用户名</label>
+                <input type="text" id="username" name="username" />
+            </p>
+            <p>
+                <label for="password">密码</label>
+                <input type="password" id="password" name="password" />
+            </p>
+            <p>
+                <label for="confirm-password">确认密码</label>
+                <input type="password" id="confirm-password" name="confirm-password" />
+            </p>
+            <p>
+                <input type="submit" value="登录" />
+            </p>
+        </fieldset>
+    </form>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/validator/jquery.validate-1.13.1.js"></script>
+    <script type="text/javascript" src="js/validator/local/zh_cn.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $("#demoForm").validate({
+            debug: true,
+            rules: {
+                username: {
+                    required: true,
+                    minlength: 2,
+                    maxlength: 10
+                },
+                password: {
+                    required: true,
+                    minlength: 2,
+                    maxlength: 16
+                },
+                "confirm-password": {
+                    equalTo: "#password"
+                }
+            },
+            messages: {
+                username: {
+                    required: '请输入用户名',
+                    minlength: '用户名不能小于2个字符',
+                    maxlength: '用户名不能超过10个字符',
+                    remote: '用户名不存在'
+                },
+                password: {
+                    required: '请输入密码',
+                    minlength: '密码不能小于2个字符',
+                    maxlength: '密码不能超过16个字符'
+                },
+                "confirm-password": {
+                    equalTo: "两次输入密码不一致"
+                }
+            }
+        });
+
+    })
+    </script>
+</body>
+
+</html>

@@ -12,76 +12,101 @@
             <a class="back" href="javascript:;">返回</a>
             <h2 class="topBar-title">积分兑换</h2>
         </header>
-        <div class="contain">
-            <ul class="module points-change">
-                <li class="goods-pic">
-                    <img src="images/goods-pic.jpg">
-                </li>
-                <li class="goods-info">
-                    <h4 class="info-title">联想（ThinkPad）轻薄系列E450C(20EH0001CD)14英寸笔记本电脑(i5-4210U 4G 500G 2G独显Win8.1)</h4>
-                    <p class="info-points">500积分</p>
-                </li>
-            </ul>
-            <ul class="fill-info">
-                <li class="province">
-                    <span>省份</span>
-                    <div class="opacity">
-                        <select>
-                            <option value="1">aaa</option>
-                            <option value="2">bbb</option>
-                            <option value="3">ccc</option>
-                        </select>
-                        <span class="arrow-down"></span>
-                    </div>
-                </li>
-                <li class="city">
-                    <span>市</span>
-                    <div class="opacity">
-                        <select>
-                            <option value="1">aaa</option>
-                            <option value="2">bbb</option>
-                            <option value="3">ccc</option>
-                        </select>
-                        <span class="arrow-down"></span>
-                    </div>
-                </li>
-                <li class="County">
-                    <span>县/区</span>
-                    <div class="opacity">
-                        <select>
-                            <option value="1">aaa</option>
-                            <option value="2">bbb</option>
-                            <option value="3">ccc</option>
-                        </select>
-                        <span class="arrow-down"></span>
-                    </div>
-                </li>
-                <li class="adr-detail">
-                    <span>详细地址</span>
-                    <div class="opacity">
-                        <input></input>
-                    </div>
-                </li>
-            </ul>
-            <div class="else">
-                <span class="e-mid">或</span>
+        
+        <form id="form">
+            <div class="contain">
+                <ul class="module points-change">
+                    <li class="goods-pic">
+                        <img src="images/goods-pic.jpg">
+                    </li>
+                    <li class="goods-info">
+                        <h4 class="info-title">联想（ThinkPad）轻薄系列E450C(20EH0001CD)14英寸笔记本电脑(i5-4210U 4G 500G 2G独显Win8.1)</h4>
+                        <p class="info-points">500积分</p>
+                    </li>
+                </ul>
+                <ul class="fill-info">
+                    <li class="province">
+                        <span>省份</span>
+                        <div class="opacity">
+                            <select>
+                                <option value="1">aaa</option>
+                                <option value="2">bbb</option>
+                                <option value="3">ccc</option>
+                            </select>
+                            <span class="arrow-down"></span>
+                        </div>
+                    </li>
+                    <li class="city">
+                        <span>市</span>
+                        <div class="opacity">
+                            <select>
+                                <option value="1">aaa</option>
+                                <option value="2">bbb</option>
+                                <option value="3">ccc</option>
+                            </select>
+                            <span class="arrow-down"></span>
+                        </div>
+                    </li>
+                    <li class="County">
+                        <span>县/区</span>
+                        <div class="opacity">
+                            <select>
+                                <option value="1">aaa</option>
+                                <option value="2">bbb</option>
+                                <option value="3">ccc</option>
+                            </select>
+                            <span class="arrow-down"></span>
+                        </div>
+                    </li>
+                    <li class="adr-detail">
+                        <span>详细地址</span>
+                        <div class="opacity">
+                            <input type="text" name="addr"></input>
+                        </div>
+                    </li>
+                </ul>
+                <div class="else">
+                    <span class="e-mid">或</span>
+                </div>
+                <h3 class="title">地址选择</h3>
+                <div class="use-addrs">
+                    <p>
+                        <input type="radio" name="addrs" checked>上海市-浦东新区-曹路镇</p>
+                    <p>
+                        <input type="radio" name="addrs">上海市-浦东新区-曹路镇</p>
+                    <p>
+                        <input type="radio" name="addrs">上海市-浦东新区-曹路镇</p>
+                </div>
+                <div class="label introdu tophold"><label>温馨提示</label>
+                    <span class="point ">请确认好商品内容，积分兑换后不予退还</span>
+                </div>
             </div>
-            <h3 class="title">地址选择</h3>
-            <div class="use-addrs">
-                <p>
-                    <input type="radio" name="addrs" checked>上海市-浦东新区-曹路镇</p>
-                <p>
-                    <input type="radio" name="addrs">上海市-浦东新区-曹路镇</p>
-                <p>
-                    <input type="radio" name="addrs">上海市-浦东新区-曹路镇</p>
+            <div class="do-change">
+                <a href="javascript:;" class="btn">兑换</a>
             </div>
-            <div class="label introdu tophold"><label>温馨提示</label>
-                <span class="point ">请确认好商品内容，积分兑换后不予退还</span>
-            </div>
-        </div>
-        <div class="do-change">
-            <a href="javascript:;" class="btn">兑换</a>
-        </div>
+        </form>
     </div>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/validator/validator.js"></script>
+    <script type="text/javascript" src="js/validator/local/zh_cn.js"></script>
+
+    <script type="text/javascript">
+    $('#form').validator({
+        stopOnError:true,
+        focusCleanup:true,
+        timely:1,
+        fields:{
+            addr:{
+                rule:'required',
+                msg:{
+                    required:'请输入详细地址'
+                }
+            }
+
+        }
+    }).on('click','a.btn',function(e){
+        $(e.delegateTarget).trigger("validate");
+    })
+    </script>
 </body>
 </html>

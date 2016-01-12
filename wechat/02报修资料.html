@@ -22,19 +22,19 @@
                             <li class="co-name">
                                 <span>公司名称</span>
                                 <div class="opacity">
-                                    <input id="co-name" name="co-name" type="text" />
+                                    <input name="co-name" type="text" />
                                 </div>
                             </li>
                             <li class="contaner">
                                 <span>联系人</span>
                                 <div class="opacity">
-                                    <input></input>
+                                    <input type="text" name="person-name"></input>
                                 </div>
                             </li>
                             <li class="cont-num">
                                 <span>联系方式</span>
                                 <div class="opacity">
-                                    <input></input>
+                                    <input type="text" name="cont-num"></input>
                                 </div>
                             </li>
                             <li class="province">
@@ -73,7 +73,7 @@
                             <li class="adr-detail">
                                 <span>详细地址</span>
                                 <div class="opacity">
-                                    <input></input>
+                                    <input type="text" name="addr"></input>
                                 </div>
                             </li>
                         </ul>
@@ -99,19 +99,19 @@
                             <li class="co-name">
                                 <span>公司名称</span>
                                 <div class="opacity">
-                                    <input id="co-name" name="co-name" type="text" />
+                                    <input name="co-name" type="text" />
                                 </div>
                             </li>
                             <li class="contaner">
                                 <span>联系人</span>
                                 <div class="opacity">
-                                    <input />
+                                    <input type="text" name="person-name">
                                 </div>
                             </li>
                             <li class="cont-num">
                                 <span>联系方式</span>
                                 <div class="opacity">
-                                    <input id="cont-num" name="cont-num" type="text" />
+                                    <input name="cont-num" type="text" />
                                 </div>
                             </li>
                             <li class="province">
@@ -150,7 +150,7 @@
                             <li class="adr-detail">
                                 <span>详细地址</span>
                                 <div class="opacity">
-                                    <input />
+                                    <input type="text" name="addr">
                                 </div>
                             </li>
                         </ul>
@@ -191,33 +191,45 @@
             $(this).text('+添加备用地址');
         }
     });
-     var $form=$("form");
-     console.log($form.html());
+    var $form = $("form");
+    console.log($form.html());
     $form.validator({
-        
+
         stopOnError: true,
         focusCleanup: true,
         timely: 1,
-        rules:{tel: [/^1[3|4|5|7|8][0-9]{9}$/, '请输入正确的手机号码']},
+        rules: {
+            tel: [/^1[3|4|5|7|8][0-9]{9}$/, '请输入正确的手机号码']
+        },
 
-        fields:{
-            '#co-name': {
-                    rule: 'required;',
-                    msg: {
-                        required: '请输入您的账号'
-                    }
-                },
-            '#cont-num': {
+        fields: {
+            'co-name': {
+                rule: 'required;',
+                msg: {
+                    required: '请输入公司名称'
+                }
+            },
+            'person-name':{
+                rule:'required',
+                msg:{
+                    required:'请输入联系人'
+                }
+            },
+            'cont-num': {
                 rule: 'required;tel;',
                 msg: {
-                    required: '请输入您的联系方式'
+                    required: '请输入您的手机号'
+                }
+            },
+            addr:{
+                rule:'required',
+                msg:{
+                    required:'请输入联系地址'
                 }
             }
         }
-        });
-
+    });
     </script>
-
 </body>
 
 </html>

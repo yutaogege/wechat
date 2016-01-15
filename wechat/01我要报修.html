@@ -14,45 +14,49 @@
             <a class="back" href="javascript:;">返回</a>
             <h2 class="topBar-title">我要报修</h2>
         </header>
-        <div class="contain">
-            <div class="banner_wrap">
-                <img src="images/banner01.jpg">
+       <form action="" id="form">
+            <div class="contain">
+                <div class="banner_wrap">
+                    <img src="images/banner01.jpg">
+                </div>
+                <dl class="module">
+                    <dt>
+                        <h3 class="title">问题描述</h3>
+                    </dt>
+                    <dd class="feedback">
+                        <textarea class="descript" id="feed-views" name="feed-views" placeholder="点击编辑问题描述"></textarea>
+                    </dd>
+                </dl>
+                <dl class="module">
+                    <dt>
+                        <h3 class="title">使用次数(<span class="count">9</span>)</h3>
+                    </dt>
+                    <dd>
+                        <div class="func-count">
+                            <ul class="funcC">
+                                <li class="funcC-cut"></li>
+                                <li class="funcC-num">8</li>
+                                <li class="funcC-add"></li>
+                            </ul>
+                            <span>使用</span>
+                        </div>
+                        <div class="else">
+                            <span class="e-mid">或</span>
+                        </div>
+                        <div class="result">
+                            <p class="no-result">没有次数？不要紧，点这里！</p>
+                        </div>
+                    </dd>
+                </dl>
+                <div class="do-repair">
+                    <a href="javascript:;" class="btn">立即报修</a>
+                </div>
             </div>
-            <dl class="module">
-                <dt>
-                    <h3 class="title">问题描述</h3>
-                </dt>
-                <dd class="text-cont">
-                    <textarea class="descript" placeholder="点击编辑问题描述"></textarea>
-                </dd>
-            </dl>
-            <dl class="module">
-                <dt>
-                    <h3 class="title">使用次数</h3>
-                </dt>
-                <dd>
-                    <div class="func-count">
-                        <ul class="funcC">
-                            <li class="funcC-cut"></li>
-                            <li class="funcC-num">8</li>
-                            <li class="funcC-add"></li>
-                        </ul>
-                        <span>使用</span>
-                    </div>
-                    <div class="else">
-                        <span class="e-mid">或</span>
-                    </div>
-                    <div class="result">
-                        <p class="no-result">没有次数？不要紧，点这里！</p>
-                    </div>
-                </dd>
-            </dl>
-            <div class="do-repair">
-                <a href="javascript:;" class="btn">立即报修</a>
-            </div>
-        </div>
+       </form>
     </div>
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/validator/validator.js"></script>
+    <script type="text/javascript" src="js/validator/local/zh_cn.js"></script>
     <script type="text/javascript">
     $(function() {
         $('.funcC').on('click', function(e) {
@@ -72,6 +76,34 @@
             }
             $('.funcC-num').text($val);
         })
+        var count=$('.count').text(),
+            numC=$('.funcC-num').text();
+        if (numC > count) {
+            $(numC).text(count);
+        }
+    })
+    $('#form').validator({
+        stopOnError:true,
+        focusCleanup:true,
+        timely:1,
+        fields:{
+            'feed-views':{
+                rule:'required',
+                msg:{
+                    required:'内容不能为空'
+                }
+            },
+            'feed-contc':{
+                rule:'required;digits',
+                msg:{
+                    required:'请输入正确的联系方式',
+                    digits:'请输入正确的联系方式'
+                }
+            }
+
+        }
+    }).on('click','a.btn',function(e){
+        $(e.delegateTarget).trigger("validate");
     })
     </script>
 </body>

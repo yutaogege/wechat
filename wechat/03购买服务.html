@@ -61,6 +61,12 @@
                             </div>
                         </li>
                     </ul>
+                    <!-- 对应商品弹出层 -->
+                    <div class="text-wrap">处理两台PC故障</div>
+                    <div class="text-wrap">处理两台PC故障处理两台PC故障</div>
+                    <div class="text-wrap">处理两台PC故障</div>
+                    <div class="text-wrap">处理两台PC故障</div>
+                    <div class="text-wrap">处理两台PC故障</div>
                 </dd>
             </dl>
             <div class="inall-wrap">
@@ -109,6 +115,146 @@
 
             calc_price();
 
+        })
+
+        $('.descpt').on('click', function(s) {
+            $('.text-wrap').show;
+        })
+
+
+    })
+    </script>
+
+    var oBtn = document.getElementByClassName('descpt');
+    var oDiv = document.getElementByClassName('text-wrap');
+    oBtn.onclick=function(){
+        oDiv.style.cssText = 'display:block;';
+    };
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>购买服务</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/wechat.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="topBar">
+            <a class="back" href="javascript:;">返回</a>
+            <h2 class="topBar-title">购买服务</h2>
+        </header>
+        <div class="contain">
+            <dl class="module">
+                <dd>
+                    <div class="func-count">
+                        <ul class="funcC">
+                            <li class="funcC-cut"></li>
+                            <li class="funcC-num">8</li>
+                            <li class="funcC-add"></li>
+                        </ul>
+                        <span>购买</span>
+                    </div>
+                    <div class="else">
+                        <span class="e-mid">或</span>
+                    </div>
+                    <h4 class="label">套餐</h4>
+                    <ul class="combo">
+                        <li class="goods1 choose">
+                            <div class="des-wrap">
+                                <p class="price"><span>398</span>/次</p>
+                                <p class="descpt">处理两台PC故障</p>
+                            </div>
+                        </li>
+                        <li class="goods2">
+                            <div class="des-wrap">
+                                <p class="price"><span>2900</span>/10次</p>
+                                <p class="descpt">处理两台PC故障处理两台PC故障</p>
+                            </div>
+                        </li>
+                        <li class="goods3">
+                            <div class="des-wrap">
+                                <p class="price"><span>8600</span>/30次</p>
+                                <p class="descpt">处理两台PC故障</p>
+                            </div>
+                        </li>
+                        <li class="goods3">
+                            <div class="des-wrap">
+                                <p class="price"><span>8600</span>/30次</p>
+                                <p class="descpt">处理两台PC故障</p>
+                            </div>
+                        </li>
+                        <li class="goods3">
+                            <div class="des-wrap">
+                                <p class="price"><span>8600</span>/30次</p>
+                                <p class="descpt">处理两台PC故障</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- 对应商品弹出层 -->
+                    <div class="text-wrap">处理两台PC故障</div>
+                </dd>
+            </dl>
+            <div class="inall-wrap">
+                <p class="in-all">总价：
+                    <b>￥<span>0</span></b>
+                </p>
+            </div>
+            <div class="do-repair">
+                <a href="javascript:;" class="btn">立即支付</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $('.funcC').on('click', function(e) {
+            var $cut = $('.funcC-cut')[0],
+                $add = $('.funcC-add')[0],
+                $val = $('.funcC-num').text() - 0;
+            // 点击减号
+            if (e.target == $cut) {
+                if ($val == 0) {
+                    return;
+                }
+                $val--;
+            }
+            // 点击加号
+            else if (e.target == $add) {
+                $val++;
+            }
+            $('.funcC-num').text($val);
+        })
+
+        function calc_price() {
+            var $price = 0;
+            $('.combo li').each(function(index, el) {
+                if ($(this).hasClass('choose')) {
+                    $price += $(this).find('span').text() - 0;
+                }
+            })
+            $('.in-all b span').text($price)
+        }
+        calc_price();
+        $('.combo li').on('click', function() {
+            $(this).toggleClass('choose');
+
+            calc_price();
+
+        })
+
+        $('.descpt').on('click', function(s) {
+            $('.text-wrap').css('display','block');
+        })
+
+
+        $('.text-wrap').on('click', function(s) {
+            $('.text-wrap').css('display','none');
         })
 
 

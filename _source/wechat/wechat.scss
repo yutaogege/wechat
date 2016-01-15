@@ -240,6 +240,7 @@ body {
     color: #a5a5a5;
     p {
         line-height: 1.2;
+        cursor: pointer;
     }
     input[type=radio] {
         position: relative;
@@ -316,20 +317,31 @@ body {
 }
 
 .combo{
-    margin:rem-calc(0 24 0 40);
+    margin:0 2% 0 6%;
     background: #fff;
     text-align: center;
     overflow: hidden;
     padding: rem-calc(36 0);
     li{
+        // height:rem-calc(217);
+        width:32%;
+        // box-sizing:border-box;
+        // border: 1px solid #050001;
+        // border-radius: rem-calc(5);
+        float: left;
+        overflow: hidden;
+        // cursor: pointer;
+        // margin-right: rem-calc(16);
+        // margin-bottom: rem-calc(16);
+    }
+    .des-wrap{
         height:rem-calc(217);
-        width:rem-calc(175);
+        width:90%;
         box-sizing:border-box;
         border: 1px solid #050001;
         border-radius: rem-calc(5);
-        float: left;
         cursor: pointer;
-        margin-right: rem-calc(16);
+        margin-right: 10%;
         margin-bottom: rem-calc(16);
     }
     .price{
@@ -354,6 +366,7 @@ body {
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
+        z-index: 80;
     }
     .choose{
         .price{background: #4285f4;}
@@ -750,4 +763,27 @@ body {
     padding: 0;
     margin-bottom: rem-calc(10);
     font-size: rem-calc(28);
+}
+span.n-msg{
+    font-size: rem-calc(20);
+    margin: rem-calc(8);
+    color: red;
+}
+.text-wrap{
+    position: fixed;
+    top:15%;
+    bottom: 15%;
+    left: 10%;
+    right: 10%;
+    border: 1px dotted #bbb;
+    background: #fff;
+    z-index: 99;
+    max-width: rem-calc(515);
+    border-radius: rem-calc(10);
+    filter:Alpha(opacity=50);
+    opacity:0.5;
+    text-indent:2em; 
+    padding: rem-calc(40);
+    overflow: hidden;
+    display: none;
 }

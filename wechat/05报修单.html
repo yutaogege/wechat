@@ -15,94 +15,95 @@
             <a class="back" href="javascript:;">返回</a>
             <h2 class="topBar-title">报修单</h2>
         </header>
-        <div class="contain">
-            <form>
-                <ul class="module bill-table">
-                    <li class="label bill-list">
-                        <label>订单号</label>
-                        <span class="list-show">0011</span>
-                    </li>
-                    <li class="label bill-worker">
-                        <label>接单工程师</label>
-                        <div class="list-show">
-                            <span>张工</span>
-                            <img src="images/member.jpg">
-                        </div>
-                    </li>
-                    <li class="label bill-name">
-                        <label>姓名</label>
-                        <span class="list-show">毅大师</span>
-                    </li>
-                    <li class="label bill-count">
-                        <label>联系方式</label>
-                        <div class="list-show">
-                            <input type="text" id="bill-count" name="bill-count" value="15816817818" />
-                        </div>
-                    </li>
-                    <li class="label bill-prob">
-                        <label>问题描述</label>
-                        <div class="list-show">
-                            <textarea class="descript">是否是肯定会发生了肯定还是靠技术水电是他仍然通都是可理解理解理解理解所得税法士大夫法功高电脑开不了机了求助！电脑开不了机了水电是的冯绍峰水电费水电费多少财富都是他和他人很多
-                            </textarea>
-                        </div>
-                    </li>
-                    <li class="label bill-adr">
-                        <label>维修地点</label>
-                        <div class="list-show">
-                            <input type="text" id="bill-adr" name="bill-adr" value="上海市-浦东区-金桥" />
-                        </div>
-                    </li>
-                    <li class="label bill-startime">
-                        <label>入场时间</label>
-                        <div class="list-show">
-                            <span><input type="text" class="bill-time" name="bill-startime" value="2015-12-22 12:00"></span>
-                            <label for="bill-startime">入场</label>
-                        </div>
-                    </li>
-                    <li class="label bill-overtime">
-                        <label>离场时间</label>
-                        <div class="list-show">
-                            <span>
-<input type="text" class="bill-time" name="bill-startime" value="2015-12-22 19:00">
-                            </span>
-                            <label for="bill-overtime">离场</label>
-                        </div>
-                    </li>
-                    <li class="label bill-count">
-                        <label>次数</label>
-                        <span class="list-show">10次</span>
-                    </li>
-                    <li class="label bill-discrpt">
-                        <label>订单状态</label>
-                        <span class="list-show">未评论</span>
-                        <div class="star-line star-box">
-                            <span class="active"></span>
-                            <span class="active"></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </li>
-                    <li class="label bill-usersay">
-                        <label>用户总结</label>
-                        <div class="star-line">
-                            <textarea class="descript">very good！服务很周到！！
-                            </textarea>
-                        </div>
-                    </li>
-                    <li class="label bill-workersay">
-                        <label>工程师总结</label>
-                        <div class="star-line">
-                            <textarea class="descript">圆满完成任务！！
-                            </textarea>
-                        </div>
-                    </li>
-                </ul>
-            </form>
-            <div class="do-repair">
-                <a href="javascript:;" class="btn">立即报修</a>
+        <form action="" id="form">
+            <div class="contain">
+                <form>
+                    <ul class="module bill-table">
+                        <li class="label bill-list">
+                            <label>订单号</label>
+                            <span class="list-show">0011</span>
+                        </li>
+                        <li class="label bill-worker">
+                            <label>接单工程师</label>
+                            <div class="list-show">
+                                <span>张工</span>
+                                <img src="images/member.jpg">
+                            </div>
+                        </li>
+                        <li class="label bill-name">
+                            <label>姓名</label>
+                            <span class="list-show">毅大师</span>
+                        </li>
+                        <li class="label bill-count">
+                            <label>联系方式</label>
+                            <div class="list-show">
+                                <input type="text" id="bill-count" name="bill-count" value="15816817818" />
+                            </div>
+                        </li>
+                        <li class="label bill-prob">
+                            <label>问题描述</label>
+                            <div class="list-show">
+                                <textarea class="descript">是否是肯定会发生了肯定还是靠技术水电是他仍然通都是可理解理解理解理解所得税法士大夫法功高电脑开不了机了求助！电脑开不了机了水电是的冯绍峰水电费水电费多少财富都是他和他人很多
+                                </textarea>
+                            </div>
+                        </li>
+                        <li class="label bill-adr">
+                            <label>维修地点</label>
+                            <div class="list-show">
+                                <input type="text" id="bill-adr" name="bill-adr" value="上海市-浦东区-金桥" />
+                            </div>
+                        </li>
+                        <li class="label bill-startime">
+                            <label>入场时间</label>
+                            <div class="list-show">
+                                <span><input type="text" class="bill-time" name="bill-startime" value="2015-12-22 12:00"></span>
+                                <label for="bill-startime">入场</label>
+                            </div>
+                        </li>
+                        <li class="label bill-overtime">
+                            <label>离场时间</label>
+                            <div class="list-show">
+                                <span>
+    <input type="text" class="bill-time" name="bill-startime" value="2015-12-22 19:00">
+                                </span>
+                                <label for="bill-overtime">离场</label>
+                            </div>
+                        </li>
+                        <li class="label bill-count">
+                            <label>次数</label>
+                            <span class="list-show">10次</span>
+                        </li>
+                        <li class="label bill-discrpt">
+                            <label>订单状态</label>
+                            <span class="list-show">未评论</span>
+                            <div class="star-line star-box">
+                                <span class="active"></span>
+                                <span class="active"></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </li>
+                        <li class="label bill-usersay">
+                            <label>用户总结</label>
+                            <div class="star-line">
+                                <textarea class="descript">very good！服务很周到！！
+                                </textarea>
+                            </div>
+                        </li>
+                        <li class="label bill-workersay">
+                            <label>工程师总结</label>
+                            <div class="star-line">
+                                <textarea class="descript">圆满完成任务！！
+                                </textarea>
+                            </div>
+                        </li>
+                    </ul>
+                <div class="do-repair">
+                    <a href="javascript:;" class="btn">立即报修</a>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="js/mobiscroll.custom-2.6.2.min.js"></script>

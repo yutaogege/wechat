@@ -316,24 +316,21 @@ body {
 }
 
 .combo{
-    margin:rem-calc(0 40);
+    margin:rem-calc(0 24 0 40);
     background: #fff;
-    height: rem-calc(256);
     text-align: center;
     overflow: hidden;
-    padding-top: rem-calc(36);
+    padding: rem-calc(36 0);
     li{
-        $w:3%;
         height:rem-calc(217);
-        width:(100% - $w * 2)/3;
+        width:rem-calc(175);
         box-sizing:border-box;
         border: 1px solid #050001;
         border-radius: rem-calc(5);
         float: left;
         cursor: pointer;
-        &+li{
-            margin-left: $w;
-        }
+        margin-right: rem-calc(16);
+        margin-bottom: rem-calc(16);
     }
     .price{
         width: 100%;
@@ -348,6 +345,15 @@ body {
         color: #a5a5a5;
         font-size: rem-calc(24);
         padding: rem-calc(30 20 0);
+        // overflow: hidden;
+        // height: 2.8em;
+        // text-overflow: ellipsis;
+        // white-space: nowrap;
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
     .choose{
         .price{background: #4285f4;}
@@ -733,4 +739,15 @@ body {
 .introdu .intro{
     min-height: rem-calc(170);
     margin-bottom: rem-calc(20);
+}
+.no-text{
+    margin: rem-calc(7 0);
+    padding: rem-calc(10 26);
+    color: #818181;
+}
+
+.fill-info .title{
+    padding: 0;
+    margin-bottom: rem-calc(10);
+    font-size: rem-calc(28);
 }

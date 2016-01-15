@@ -14,46 +14,53 @@
             <a class="back" href="javascript:;">返回</a>
             <h2 class="topBar-title">意见反馈</h2>
         </header>
-       <form action="" id="form">
+        <form action="" id="form">
             <div class="contain">
-               <div class="feedback">
-                   <textarea id="feed-views" name="feed-views" placeholder="请留下您的宝贵意见和建议" class="descript"></textarea>
-               </div>
-               <div class="feedback">
-                   <input id="feed-contc" name="feed-contc" placeholder="请留下您的联系方式（QQ/手机号）" class="feed-contc" />
-               </div>
-           </div>
-           <div class="do-change">
-               <a href="javascript:;" class="btn">兑换</a>
-           </div>
-       </form>
+                <div class="feedback">
+                    <textarea id="feed-views" name="feed-views" placeholder="请留下您的宝贵意见和建议" class="descript"></textarea>
+                </div>
+                <div class="feedback">
+                    <input id="feed-contc" name="feed-contc" placeholder="请留下您的联系方式（QQ/手机号）" class="feed-contc" />
+                </div>
+            </div>
+            <div class="do-change">
+                <a href="javascript:;" class="btn">兑换</a>
+            </div>
+        </form>
     </div>
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="js/validator/validator.js"></script>
     <script type="text/javascript" src="js/validator/local/zh_cn.js"></script>
-
     <script type="text/javascript">
+    // 表单验证
     $('#form').validator({
-        stopOnError:true,
-        focusCleanup:true,
-        timely:1,
-        fields:{
-            'feed-views':{
-                rule:'required',
-                msg:{
-                    required:'内容不能为空'
+        stopOnError: true,
+        focusCleanup: true,
+        timely: 1,
+        fields: {
+            'feed-views': {
+                rule: 'required',
+                msg: {
+                    required: '内容不能为空'
                 }
             },
-            'feed-contc':{
-                rule:'required;digits',
-                msg:{
-                    required:'请输入正确的联系方式',
-                    digits:'请输入正确的联系方式'
+            'feed-contc': {
+                rule: 'required;digits',
+                msg: {
+                    required: '请输入正确的联系方式',
+                    digits: '请输入正确的联系方式'
                 }
             }
 
+        },
+        valid: function(form) {
+            console.log("验证通过");
+        },
+        invalid: function(form) {
+            // 失败走这里
+            console.log("失败");
         }
-    }).on('click','a.btn',function(e){
+    }).on('click', 'a.btn', function(e) {
         $(e.delegateTarget).trigger("validate");
     })
     </script>

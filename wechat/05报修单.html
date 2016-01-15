@@ -16,7 +16,7 @@
             <h2 class="topBar-title">报修单</h2>
         </header>
         <div class="contain">
-            <form>
+            <form id="form">
                 <ul class="module bill-table">
                     <li class="label bill-list">
                         <label>订单号</label>
@@ -31,7 +31,10 @@
                     </li>
                     <li class="label bill-name">
                         <label>姓名</label>
-                        <span class="list-show">毅大师</span>
+                        <!-- <span class="list-show">毅大师</span> -->
+                        <div class="list-show">
+                            <input type="text" id="user-name" name="user-name" value="毅大师" />
+                        </div>
                     </li>
                     <li class="label bill-count">
                         <label>联系方式</label>
@@ -42,7 +45,7 @@
                     <li class="label bill-prob">
                         <label>问题描述</label>
                         <div class="list-show">
-                            <textarea class="descript">是否是肯定会发生了肯定还是靠技术水电是他仍然通都是可理解理解理解理解所得税法士大夫法功高电脑开不了机了求助！电脑开不了机了水电是的冯绍峰水电费水电费多少财富都是他和他人很多
+                            <textarea class="descript" name="bill-prob">是否是肯定会发生了肯定还是靠技术水电是他仍然通都是可理解理解理解理解所得税法士大夫法功高电脑开不了机了求助！电脑开不了机了水电是的冯绍峰水电费水电费多少财富都是他和他人很多
                             </textarea>
                         </div>
                     </li>
@@ -55,7 +58,7 @@
                     <li class="label bill-startime">
                         <label>入场时间</label>
                         <div class="list-show">
-                            <span><input type="text" class="bill-time" name="bill-startime" value="2015-12-22 12:00"></span>
+                            <span><input type="text" class="bill-time" id="bill-startime" name="bill-startime" value="2015-12-22 12:00"></span>
                             <label for="bill-startime">入场</label>
                         </div>
                     </li>
@@ -63,7 +66,7 @@
                         <label>离场时间</label>
                         <div class="list-show">
                             <span>
-<input type="text" class="bill-time" name="bill-startime" value="2015-12-22 19:00">
+<input type="text" class="bill-time" id="bill-overtime" name="bill-overtime" value="2015-12-22 19:00">
                             </span>
                             <label for="bill-overtime">离场</label>
                         </div>
@@ -74,7 +77,7 @@
                     </li>
                     <li class="label bill-discrpt">
                         <label>订单状态</label>
-                        <span class="list-show">未评论</span>
+                        <span class="list-show">已评论</span>
                         <div class="star-line star-box">
                             <span class="active"></span>
                             <span class="active"></span>
@@ -85,29 +88,32 @@
                     </li>
                     <li class="label bill-usersay">
                         <label>用户总结</label>
-                        <div class="star-line">
-                            <textarea class="descript">very good！服务很周到！！
+                        <div>
+                            <textarea class="descript" name="usersay">very good！服务很周到！！
                             </textarea>
                         </div>
                     </li>
                     <li class="label bill-workersay">
                         <label>工程师总结</label>
-                        <div class="star-line">
-                            <textarea class="descript">圆满完成任务！！
+                        <div>
+                            <textarea class="descript" name="workersay">圆满完成任务！！
                             </textarea>
                         </div>
                     </li>
                 </ul>
+                <div class="do-repair">
+                    <a href="javascript:;" class="btn">立即报修</a>
+                </div>
             </form>
-            <div class="do-repair">
-                <a href="javascript:;" class="btn">立即报修</a>
-            </div>
         </div>
     </div>
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="js/mobiscroll.custom-2.6.2.min.js"></script>
+    <script type="text/javascript" src="js/validator/validator.js"></script>
+    <script type="text/javascript" src="js/validator/local/zh_cn.js"></script>
     <script type="text/javascript">
     $(function() {
+        // 评论
         $('.star-box span').each(function(index, el) {
             var $this = $(this);
             $(el).click(function() {
@@ -116,10 +122,13 @@
                         $(this).siblings().removeClass('active')
                     } else if ($('.star-box span.active').length == 1) {
                         $(this).removeClass('active')
+                        $('.bill-discrpt .list-show').text('未评论')
                     } else {
                         $(this).addClass('active')
+                        $('.bill-discrpt .list-show').text('已评论')
                     }
                 } else {
+                    $('.bill-discrpt .list-show').text('已评论')
                     $('.star-box span').each(function(index, el) {
                         if ($this.index() >= index) {
                             $(this).addClass('active')
@@ -129,8 +138,8 @@
                     })
                 }
             })
-        })
-
+        });
+        // 选择时间
         $('.bill-time').scroller('destroy').scroller($.extend({
             preset: 'datetime',
             minDate: new Date(2012, 3, 10, 9, 22),
@@ -142,6 +151,62 @@
             display: "modal",
             lang: "zh"
         }));
+        // 表单验证
+        $('#form').validator({
+            stopOnError: true,
+            focusCleanup: true,
+            timely: 1,
+            rules: {
+                tel: [/^1[3|4|5|7|8][0-9]{9}$/, '请输入正确的手机号码']
+            },
+            fields: {
+                'user-name': {
+                    rule: 'required',
+                    msg: {
+                        required: '名字不能为空'
+                    }
+                },
+                'bill-count': {
+                    rule: 'required;tel',
+                    msg: {
+                        required: '请输入您的手机号',
+                    }
+                },
+                'bill-prob': {
+                    rule: 'required',
+                    msg: {
+                        required: '内容不能为空',
+                    }
+                },
+                'bill-startime': {
+                    rule: 'required',
+                    msg: {
+                        required: '请选择入场时间'
+                    }
+                },
+                'usersay': {
+                    rule: 'required',
+                    msg: {
+                        required: '内容不能为空'
+                    }
+                },
+                'workersay': {
+                    rule: 'required',
+                    msg: {
+                        required: '内容不能为空'
+                    }
+                },
+                valid: function(form) {
+                    console.log("验证通过");
+                },
+                invalid: function(form) {
+                    // 失败走这里
+                    console.log("失败");
+                }
+            }
+        }).on('click', 'a.btn', function(e) {
+            $(e.delegateTarget).trigger("validate");
+        })
     })
     </script>
 </body>

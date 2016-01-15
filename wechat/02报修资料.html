@@ -16,8 +16,8 @@
         </header>
         <div class="contain">
             <div class="wrap">
-                <div class="fill-info">
-                    <form action="">
+                <form action="">
+                    <div class="fill-info">
                         <ul>
                             <li class="co-name">
                                 <span>公司名称</span>
@@ -77,28 +77,28 @@
                                 </div>
                             </li>
                         </ul>
-                    </form>
-                </div>
-                <div class="else">
-                    <span class="e-mid">或</span>
-                </div>
-                <h3 class="title">地址选择</h3>
-                <div class="use-addrs">
-                    <p>
-                        <input type="radio" name="addrs" checked>上海市-浦东新区-曹路镇</p>
-                    <p>
-                        <input type="radio" name="addrs">上海市-浦东新区-曹路镇</p>
-                    <p>
-                        <input type="radio" name="addrs">上海市-浦东新区-曹路镇</p>
-                </div>
+                    </div>
+                    <div class="else">
+                        <span class="e-mid">或</span>
+                    </div>
+                    <h3 class="title">地址选择</h3>
+                    <div class="use-addrs">
+                        <p>
+                            <input type="radio" name="addrs">上海市-浦东新区-曹路镇</p>
+                        <p>
+                            <input type="radio" name="addrs">上海市-浦东新区-曹路镇</p>
+                        <p>
+                            <input type="radio" name="addrs">上海市-浦东新区-曹路镇</p>
+                    </div>
+                </form>
             </div>
             <div class="wrap-hide">
                 <div class="else">
                     <span class="e-mid">或</span>
                 </div>
-                <div class="fill-info">
-                    <div class="title">以下为备用地址</div>
-                    <form>
+                <form>
+                    <div class="fill-info">
+                        <div class="title">以下为备用地址</div>
                         <ul>
                             <li class="co-name">
                                 <span>公司名称</span>
@@ -158,20 +158,20 @@
                                 </div>
                             </li>
                         </ul>
-                    </form>
-                </div>
-                <div class="else">
-                    <span class="e-mid">或</span>
-                </div>
-                <h3 class="title">地址选择</h3>
-                <div class="use-addrs">
-                    <p>
-                        <input type="radio" name="addrs2" checked>上海市-浦东新区-曹路镇</p>
-                    <p>
-                        <input type="radio" name="addrs2">上海市-浦东新区-曹路镇</p>
-                    <p>
-                        <input type="radio" name="addrs2">上海市-浦东新区-曹路镇</p>
-                </div>
+                    </div>
+                    <div class="else">
+                        <span class="e-mid">或</span>
+                    </div>
+                    <h3 class="title">地址选择</h3>
+                    <div class="use-addrs">
+                        <p>
+                            <input type="radio" name="addrs2" checked>上海市-浦东新区-曹路镇</p>
+                        <p>
+                            <input type="radio" name="addrs2">上海市-浦东新区-曹路镇</p>
+                        <p>
+                            <input type="radio" name="addrs2">上海市-浦东新区-曹路镇</p>
+                    </div>
+                </form>
             </div>
             <div class="manage-addr">
                 <p>+添加备用地址</p>
@@ -196,7 +196,6 @@
         }
     });
     var $form = $("form");
-    console.log($form.html());
     $form.validator({
 
         stopOnError: true,
@@ -213,10 +212,10 @@
                     required: '请输入公司名称'
                 }
             },
-            'person-name':{
-                rule:'required',
-                msg:{
-                    required:'请输入联系人'
+            'person-name': {
+                rule: 'required',
+                msg: {
+                    required: '请输入联系人'
                 }
             },
             'cont-num': {
@@ -225,19 +224,28 @@
                     required: '请输入您的手机号'
                 }
             },
-            addr:{
-                rule:'required',
-                msg:{
-                    required:'请输入联系地址'
-                }
+            addr: {
+                rule: 'required',
+                msg: {
+                    required: '请输入联系地址'
+                },
+                tip:'你也可以选择下面的地址'
             }
+        },
+        valid: function(form) {
+            console.log("验证通过");
+        },
+        invalid: function(form) {
+            // 失败走这里
+            console.log("失败");
         }
     });
-
+    $('.do-submit .btn').on('click', function() {
+        $('form').trigger("validate");
+    })
     $(".use-addrs p").on('click', function(e) {
-        $(this).find("input[type='radio']").attr("checked",true);
+        $(this).find("input[type='radio']").attr("checked", true);
     });
-
     </script>
 </body>
 

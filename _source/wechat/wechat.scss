@@ -474,8 +474,12 @@ body {
     
     .descript{
         color: #a5a5a5;
-        height: rem-calc(120);
         padding: rem-calc(0 40);
+    }
+}
+.bill-usersay,.bill-workersay{
+    .descript{
+        min-height: rem-calc(120);
     }
 }
 .show-num{
@@ -768,8 +772,11 @@ span.n-msg{
     font-size: rem-calc(20);
     margin: rem-calc(8);
     color: red;
+    &:empty{
+        margin: 0;
+    }
 }
-.text-wrap{
+.dialog{
     position: fixed;
     top:15%;
     bottom: 15%;
@@ -780,10 +787,26 @@ span.n-msg{
     z-index: 99;
     max-width: rem-calc(515);
     border-radius: rem-calc(10);
-    filter:Alpha(opacity=50);
-    opacity:0.5;
-    text-indent:2em; 
     padding: rem-calc(40);
     overflow: hidden;
     display: none;
+    .close_btn{
+        position: absolute;
+        top: rem-calc(10);
+        right: rem-calc(10);
+        width: rem-calc(40);
+        height: rem-calc(40);
+        text-align: center;
+        cursor: pointer;
+    }
+}
+.mask{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    background: rgba(100,100,100, .8);
 }
